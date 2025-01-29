@@ -9,7 +9,7 @@ The decentralized network starter protocol (DNSP), it collects Node and License 
 
 ## Prerequisites
 - Docker installed
-- Block Keeper wallet and BLS keys generated, see guide here: https://docs.ackinacki.com/~/changes/39mYk5N6LBvnOcXTENP9/protocol-participation/block-keeper/join-gossip-protocol?r=RLdpGPwLPtdrgnvdb2Aa 
+- Block Keeper wallet and BLS keys generated, see guide here: https://docs.ackinacki.com/protocol-participation/block-keeper/join-dnsp-gossip 
 
 This code was tested on Ubuntu 20.04
 
