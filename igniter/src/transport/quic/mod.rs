@@ -23,10 +23,9 @@ pub fn run(
     let (outgoing_messages_s, outgoing_messages_r) = async_channel::bounded(CHANNEL_CAPACITY);
 
     let socket = UdpSocket::bind(bind_addr)?;
-    let socket_clone = socket.try_clone()?;
 
-    let incoming_handler = tokio::spawn(outgoing::run(socket, advertise_addr, outgoing_messages_r));
-    let outgoing_handler = tokio::spawn(incoming::run(socket_clone, incoming_messages_s));
+    let incoming_handler = tokio::spawn(outgoing::run(advertise_addr, outgoing_messages_r));
+    let outgoing_handler = tokio::spawn(incoming::run(socket, incoming_messages_s));
 
     let service_handler = tokio::spawn(async move {
         tokio::select! {

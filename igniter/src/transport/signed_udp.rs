@@ -1,4 +1,3 @@
-use std::collections::HashSet;
 use std::net::SocketAddr;
 
 use anyhow::Context;
@@ -46,9 +45,7 @@ impl UdpSignedTransport {
 #[async_trait]
 impl Transport for UdpSignedTransport {
     async fn open(&self, bind_addr: SocketAddr) -> anyhow::Result<Box<dyn Socket>> {
-        let udp_socket =
-            UdpSignedSocket::open(bind_addr, self.pubkeys.clone(), self.signing_key.clone())
-                .await?;
+        let udp_socket = UdpSignedSocket::open(bind_addr, self.signing_key.clone()).await?;
         Ok(Box::new(udp_socket))
     }
 }
@@ -57,25 +54,21 @@ pub struct UdpSignedSocket {
     buf_send: Vec<u8>,
     buf_recv: Box<[u8; MAX_UDP_DATAGRAM_PAYLOAD_SIZE]>,
     socket: tokio::net::UdpSocket,
-    pubkey_set: HashSet<VerifyingKey>,
     signing_key: SigningKey,
 }
 
 impl UdpSignedSocket {
     pub async fn open(
         bind_addr: SocketAddr,
-        pubkeys: impl IntoIterator<Item = VerifyingKey>,
         signing_key: SigningKey,
     ) -> anyhow::Result<UdpSignedSocket> {
         let socket = tokio::net::UdpSocket::bind(bind_addr)
             .await
             .with_context(|| format!("failed to bind to {bind_addr}/UDP for gossip"))?;
-        let pubkey_set = HashSet::from_iter(pubkeys);
         Ok(UdpSignedSocket {
             buf_send: Vec::with_capacity(MAX_UDP_DATAGRAM_PAYLOAD_SIZE),
             buf_recv: Box::new([0u8; MAX_UDP_DATAGRAM_PAYLOAD_SIZE]),
             socket,
-            pubkey_set,
             signing_key,
         })
     }

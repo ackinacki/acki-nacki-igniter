@@ -1,10 +1,12 @@
 use std::path::PathBuf;
 use std::sync::LazyLock;
 
-use crate::process::read_config;
-use crate::{Config, Keys};
 use clap::Parser;
 use serde::Serialize;
+
+use crate::config::read_yaml;
+use crate::config::Config;
+use crate::config::Keys;
 
 #[derive(Debug, Clone, Serialize)]
 pub struct Params {
@@ -16,23 +18,24 @@ pub struct Params {
 /// Cli args are globaly accessible for convenience
 pub static CLI: LazyLock<Params> = LazyLock::new(|| {
     let cli: CliArgs = CliArgs::parse();
-    let config = match read_config::<Config>(cli.config) {
+    let config = match read_yaml::<Config>(&cli.config) {
         Ok(config) => config,
         Err(error) => {
-            eprintln!("{}", error);
+            eprintln!("Error parsing config file {:?}: {:?}", cli.config, error);
             std::process::exit(1);
         }
     };
 
-    let keys = match read_config::<Keys>(cli.keys) {
+    let keys = match read_yaml::<Keys>(&cli.keys) {
         Ok(keys) => keys,
         Err(error) => {
-            eprintln!("{}", error);
+            eprintln!("Error parsing keys file {:?}: {:?}", cli.keys, error);
             std::process::exit(1);
         }
     };
     Params { config, docker_socket: cli.docker_socket, keys }
 });
+
 pub static LONG_VERSION: LazyLock<String> = LazyLock::new(|| {
     format!(
         "

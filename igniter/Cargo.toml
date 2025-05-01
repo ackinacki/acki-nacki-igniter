@@ -5,15 +5,14 @@ edition.workspace = true
 
 [dependencies]
 anyhow.workspace = true
-reqwest.workspace = true
-tokio.workspace = true
-tracing.workspace = true
-
 async-channel = "2.3.1"
 async-trait = "0.1.85"
+base64.workspace = true
 clap = { version = "4.5.2", features = ["derive", "env"] }
 cool-id-generator = "1.0.1"
 ed25519-dalek = { version = "2.1.1", features = ["serde", "rand_core"] }
+hex.workspace = true
+lazy_static = "1.5.0"
 poem = "3.0.0"
 poem-openapi = { version = "5.1.5", features = ["swagger-ui"] }
 rand = "0.8.5"
@@ -22,18 +21,18 @@ serde_json = "1.0.114"
 serde_yaml = { version = "0.9" }
 shellexpand = { version = "3.1.0", features = ["path"] }
 strum = { version = "0.26", features = ["derive"] }
-tracing-opentelemetry = "0.28"
+tokio.workspace = true
+tracing.workspace = true
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 url = { version = "2.5.4", features = ["serde"] }
-url_serde = "0.2.0"
 # crossbeam-channel = "0.5"
 # wtransport = { version = "0.5.0", features = ["dangerous-configuration", "quinn"] }
+chitchat = { path = "../chitchat" }
+thiserror.workspace = true
+tvm_types = { git = 'https://github.com/tvmlabs/tvm-sdk.git', tag = "v2.9.1.an" }
+updater = { path = "../updater" }
 wtransport = { git = "https://github.com/BiagioFesta/wtransport", commit = "8f2926c37dbdde88fbfbe8bed54355006be6351d", features = ["dangerous-configuration", "quinn"] }
 
-chitchat = { path = "../chitchat" }
-updater = { path = "../updater" }
 
-[dev-dependencies]
-assert_cmd = "2.0.13"
-predicates = "3.1.0"
-reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+[features]
+dev-mode = []
