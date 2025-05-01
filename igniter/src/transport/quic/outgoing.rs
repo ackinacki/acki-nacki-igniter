@@ -1,6 +1,4 @@
-use std::collections::HashMap;
 use std::net::SocketAddr;
-use std::net::UdpSocket;
 use std::time::Instant;
 
 use anyhow::Context;
@@ -15,23 +13,11 @@ use wtransport::Connection;
 struct ClientConnectionPool {
     public_addr: SocketAddr,
     endpoint: wtransport::Endpoint<Client>,
-    connections: HashMap<SocketAddr, Connection>,
 }
 
 impl ClientConnectionPool {
     pub fn new(public_addr: SocketAddr, endpoint: wtransport::Endpoint<Client>) -> Self {
-        Self { public_addr, endpoint, connections: HashMap::new() }
-    }
-
-    pub async fn get_or_create_connection(
-        &mut self,
-        to_addr: SocketAddr,
-    ) -> anyhow::Result<Connection> {
-        let connection = match self.connections.get(&to_addr) {
-            Some(connection) => connection.clone(),
-            None => self.create_connection(to_addr).await?,
-        };
-        Ok(connection)
+        Self { public_addr, endpoint }
     }
 
     pub async fn create_connection(&mut self, to_addr: SocketAddr) -> anyhow::Result<Connection> {
@@ -50,7 +36,6 @@ impl ClientConnectionPool {
 }
 
 pub async fn run(
-    socket: UdpSocket,
     public_addr: SocketAddr,
     outgoing_messages: Receiver<(SocketAddr, ChitchatMessage)>,
 ) -> anyhow::Result<()> {

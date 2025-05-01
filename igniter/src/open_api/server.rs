@@ -9,8 +9,8 @@ use poem::Server;
 use poem_openapi::OpenApiService;
 use tokio::sync::Mutex;
 
-use crate::api::Api;
 use crate::cli::CLI;
+use crate::open_api::routes::Api;
 
 pub async fn run(gossip: Arc<Mutex<Chitchat>>) -> anyhow::Result<()> {
     let api = Api::new(gossip);

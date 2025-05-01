@@ -82,7 +82,7 @@ mod tests {
 
         let signed_message = SignedMessage::new(
             PROTOCOL_VERSION,
-            signer.sign(&message.as_bytes()),
+            signer.sign(message.as_bytes()),
             verifying_key,
             message,
         );

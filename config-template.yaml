@@ -1,9 +1,26 @@
+# Publicly accessible address of this node
 advertise_addr: "your-public-ip:10000"
 
-# Do not change next lines
-listen_addr: "0.0.0.0:10000"
-api_addr: "0.0.0.0:10001"
-interval: 1000
+# Signature block for license verification
+# Refer to ./doc/License_attachment.md for instructions on generating license signatures
+signatures:
+  - license_id: # Unique license identifier
+    license_owner_pubkey: # Public key of the license owner
+    provider_pubkey: # Public key of the service provider
+    license_proof_sig: # Proof signature of the license
+    delegation_sig: # Signature for delegation
+    delegation_confirm_sig: # Confirmation signature from the provider
+    timestamp: # Timestamp of the <delegation_sig> creation
+
+# Enable auto-update and automatic restart of the Acki Nacki Node Docker image
+auto_update: true
+
+# DO NOT MODIFY the following parameters
+listen_addr: "0.0.0.0:10000" # Address to accept P2P connections
+api_addr: "0.0.0.0:10001" # Local API server address
+interval: 1000 # Heartbeat interval in milliseconds
+
+# Bootstrap seed nodes for peer discovery
 seeds:
   - "94.156.25.201:10000"
   - "94.156.25.202:10000"

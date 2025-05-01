@@ -8,11 +8,10 @@ use bollard::Docker;
 use futures_util::TryStreamExt;
 use tracing::info;
 
-pub const DEFAULT_IGNITER_IMAGE: &'static str = "teamgosh/acki-nacki-igniter";
 pub const DEFAULT_UPDATE_INTERVAL: Duration = Duration::from_secs(120);
-pub const DEFAULT_WATCHTOWER_IMAGE: &'static str = "containrrr/watchtower:1.7.1";
-pub const DEFAULT_WATCHTOWER_SCOPE: &'static str = "acki-nacki";
-pub const DEFAULT_DOCKER_SOCKET: &'static str = "/var/run/docker.sock";
+pub const DEFAULT_WATCHTOWER_IMAGE: &str = "containrrr/watchtower:1.7.1";
+pub const DEFAULT_WATCHTOWER_SCOPE: &str = "acki-nacki";
+pub const DEFAULT_DOCKER_SOCKET: &str = "/var/run/docker.sock";
 
 pub struct ContainerUpdater {
     image_name: String,

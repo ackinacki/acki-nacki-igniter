@@ -13,7 +13,7 @@ async fn main() -> anyhow::Result<()> {
     eprintln!("starting quic client");
 
     for i in 0.. {
-        let url = format!("https://127.0.0.1:10003");
+        let url = "https://127.0.0.1:10003".to_string();
         eprintln!("{i:>10}: connecting to {url}");
         let connection = endpoint.connect(url).await.with_context(|| "failed to connect")?;
 
