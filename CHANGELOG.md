@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2025-05-05
+
+### Fixed
+- Igniter image failed to run without `-v "/var/run/docker.sock:/var/run/docker.sock" \`
+
 ## [0.2.0] - 2025-04-29
 
 ### New

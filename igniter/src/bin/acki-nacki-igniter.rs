@@ -55,18 +55,19 @@ async fn tokio_main_inner() -> anyhow::Result<()> {
     let commit = env!("BUILD_GIT_COMMIT");
     info!("Starting server: version {} (commit {})", current_version, commit);
 
-    let updater = ContainerUpdater::try_new(
-        IGNITER_IMAGE.to_owned(),
-        DEFAULT_UPDATE_INTERVAL,
-        CLI.docker_socket.clone(),
-    )
-    .await?;
-
     let params = CLI.clone();
 
     let updater_handle = tokio::spawn(async move {
         if params.config.auto_update {
             info!("Auto update enabled");
+            let updater = ContainerUpdater::try_new(
+                IGNITER_IMAGE.to_owned(),
+                DEFAULT_UPDATE_INTERVAL,
+                CLI.docker_socket.clone(),
+                CLI.docker_config.clone(),
+            )
+            .await?;
+
             updater.run().await
         } else {
             info!("Auto update disabled");
