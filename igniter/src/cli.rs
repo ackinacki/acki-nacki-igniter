@@ -12,6 +12,7 @@ use crate::config::Keys;
 pub struct Params {
     pub config: Config,
     pub docker_socket: Option<String>,
+    pub docker_config: Option<String>,
     pub keys: Keys,
 }
 
@@ -33,7 +34,7 @@ pub static CLI: LazyLock<Params> = LazyLock::new(|| {
             std::process::exit(1);
         }
     };
-    Params { config, docker_socket: cli.docker_socket, keys }
+    Params { config, docker_socket: cli.docker_socket, docker_config: cli.docker_config, keys }
 });
 
 pub static LONG_VERSION: LazyLock<String> = LazyLock::new(|| {
@@ -65,4 +66,8 @@ pub struct CliArgs {
     /// host's docker UNIX socket
     #[arg(long, env, default_value = "/var/run/docker.sock")]
     pub docker_socket: Option<String>,
+
+    /// host's docker config
+    #[arg(long, env)]
+    pub docker_config: Option<String>,
 }

@@ -18,6 +18,7 @@ pub struct ContainerUpdater {
     interval: Duration,
     docker: Docker,
     docker_socket: String,
+    docker_config: Option<String>,
 }
 
 impl ContainerUpdater {
@@ -25,6 +26,7 @@ impl ContainerUpdater {
         image_name: String,
         interval: Duration,
         docker_socket: Option<String>,
+        docker_config: Option<String>,
     ) -> anyhow::Result<Self> {
         let docker = bollard::Docker::connect_with_local_defaults()
             .context("Failed to connect to Docker daemon")?;
@@ -32,7 +34,7 @@ impl ContainerUpdater {
         docker.ping().await.context("Failed to ping Docker daemon")?;
         let docker_socket = docker_socket.unwrap_or(DEFAULT_DOCKER_SOCKET.to_owned());
 
-        Ok(Self { image_name, interval, docker, docker_socket })
+        Ok(Self { image_name, interval, docker, docker_socket, docker_config })
     }
 
     pub async fn run(&self) -> anyhow::Result<()> {
@@ -71,6 +73,14 @@ impl ContainerUpdater {
             .await
             .context("Failed to pull watchtower image")?;
 
+        let binds = {
+            let mut binds = vec![format!("{}:/var/run/docker.sock", self.docker_socket)];
+            if let Some(config) = &self.docker_config {
+                binds.push(format!("{}:/config.json", config));
+            }
+            Some(binds)
+        };
+
         info!("Watchtower image pulled");
         let container = self
             .docker
@@ -79,7 +89,7 @@ impl ContainerUpdater {
                 container::Config {
                     image: Some("containrrr/watchtower:1.7.1"),
                     host_config: Some(bollard::secret::HostConfig {
-                        binds: Some(vec![format!("{}:/var/run/docker.sock", self.docker_socket)]),
+                        binds,
                         auto_remove: Some(true),
                         ..Default::default()
                     }),

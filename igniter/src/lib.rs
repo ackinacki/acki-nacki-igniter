@@ -389,7 +389,7 @@ mod tests {
     fn create_test_signature() -> LicenceSignature {
         LicenceSignature {
             license_id: "5e0d534d-98fd-4024-87b8-8c45414f6e9a".to_string(),
-            license_owner_pubkey: "37d545d8725f290b1dcff6e06ad7649a6264249a3202354330bb47da90c7b41f"    .to_string(),   
+            license_owner_pubkey: "37d545d8725f290b1dcff6e06ad7649a6264249a3202354330bb47da90c7b41f"    .to_string(),
             provider_pubkey: "8e962b104119b17ab09e9aa91ff17e5816f65bb66daa6c14b8ca130f4f0bfcc0" .to_string(),
             license_proof_sig: "c6F8qZ52LNeLLKdrVll5F1/U9eGGPUzJMZw7JcKWSzbO/DmmNXkWlDW+k3GwD1giLMxUPbjPzegqYoLoKOThAg==".to_string(),
             delegation_sig: "00lhq1wiiCs10ISYz2AkrZX9M0TU4YaNba3wG7oCeEFUP6uOav5kGesqntIQ+AKL5Y3nkVw+redFxQbOEuM1Dg=="  .to_string(),
@@ -402,7 +402,7 @@ mod tests {
     fn test_to_gossip_kv_no_signatures() {
         std::env::set_var("DEV_MODE", "true");
         let (config, keys) = default_config_and_keys();
-        let params = Params { config, keys, docker_socket: None };
+        let params = Params { config, keys, docker_socket: None, docker_config: None };
         let result = params.to_gossip().unwrap();
         assert_eq!(result.len(), 6);
     }
@@ -411,7 +411,7 @@ mod tests {
         std::env::set_var("DEV_MODE", "true");
         let (mut config, keys) = default_config_and_keys();
         config.signatures = vec![create_test_signature()];
-        let params = Params { config, keys, docker_socket: None };
+        let params = Params { config, keys, docker_socket: None, docker_config: None };
         let result = params.to_gossip().unwrap();
         assert_eq!(result.len(), 6);
         let hashmap: HashMap<String, String> = result.into_iter().collect();
@@ -439,7 +439,7 @@ mod tests {
         };
         // the same signature twice
         config.signatures = vec![signature_0.clone(), signature_1.clone(), signature_0.clone()];
-        let params = Params { config, keys, docker_socket: None };
+        let params = Params { config, keys, docker_socket: None, docker_config: None };
         let result = params.to_gossip().unwrap();
         assert_eq!(result.len(), 7);
 

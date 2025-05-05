@@ -4,12 +4,13 @@
   - [Overview](#overview)
   - [Prerequisites](#prerequisites)
   - [Generate a Node Provider Key Pair](#generate-a-node-provider-key-pair)
-  - [Get delegation signatures](#get-delegation-signatures)
-  - [Prepare configuration files](#prepare-configuration-files)
+  - [Get Delegation Signatures](#get-delegation-signatures)
+  - [Prepare Configuration Files](#prepare-configuration-files)
     - [Generate Node Owner and BLS  Keys and Create `keys.yaml`](#generate-node-owner-and-bls--keys-and-create-keysyaml)
     - [Prepare Confirmation Signatures and Create `config.yaml`](#prepare-confirmation-signatures-and-create-configyaml)
-  - [Automatic Update](#automatic-update)
-  - [Run Igniter](#run-igniter)
+  - [About Automatic Update](#about-automatic-update)
+  - [Run Igniter with auto-update](#run-igniter-with-auto-update)
+  - [Run Igniter without auto-update](#run-igniter-without-auto-update)
 
 ## Overview
 
@@ -68,24 +69,23 @@ Refer to the [License Delegation and Attachment](docs/License_attachment.md) sec
 
 Create a [`config.yaml`](./config-template.yaml) file based on the provided template
 
-## Automatic Update
+## About Automatic Update
 
 Igniter supports automatic update of its container when a new version is released.  
-To enable this feature, you need to set the `auto_update` parameter in the [`config.yaml`](./config-template.yaml#L16) configuration file:
+This feature is enabled with `auto_update` parameter in the [`config.yaml`](./config-template.yaml#L16) configuration file.
 
-**Important:**  
+- **Important:**  
 **For auto-update to work, Igniter must be launched using the `latest` tag.**
 
-```
-auto_update: true
-```
+- **Important:**  
+**For auto-update to work, host's docker socket should be mounted inside the container**
 
-## Run Igniter
+## Run Igniter with auto-update
 
 **Important:**  
 **Igniter must be launched on each node that you want to include in the Zerostate.**
 
-Igniter must be run using a Docker image with the `latest` tag:
+Igniter must be run using a Docker image with the `latest` tag and the hosts's Docker socket mounted inside the container:
 
 ```
 export KEYS=./keys.yaml
@@ -107,6 +107,39 @@ docker run  \
         $IMAGE \
         acki-nacki-igniter --keys /keys.yaml --config /config.yaml
 ```
+
+By default, the Gossip state is accessible at:  
+http://your_public_ip_address:10001
+
+## Run Igniter without auto-update
+
+**Important:**  
+**Igniter must be launched on each node that you want to include in the Zerostate.**
+
+Update config.yaml file: set `auto_update` to `false`.
+
+Then, run the container:
+
+```
+export KEYS=./keys.yaml
+export CONFIG_FILE=./config.yaml
+
+# Change the following line to match the `advertise_addr` port, specified in your config file
+export ADVERTISE_PORT=10000
+
+export IMAGE=teamgosh/acki-nacki-igniter:latest
+
+docker run  \
+        --rm \
+        -p 10001:10001 \
+        -p ${ADVERTISE_PORT}:10000/udp \
+        -p ${ADVERTISE_PORT}:10000/tcp \
+        -v "${KEYS}:/keys.yaml" \
+        -v "${CONFIG_FILE}:/config.yaml" \
+        $IMAGE \
+        acki-nacki-igniter --keys /keys.yaml --config /config.yaml
+```
+
 
 By default, the Gossip state is accessible at:  
 http://your_public_ip_address:10001
