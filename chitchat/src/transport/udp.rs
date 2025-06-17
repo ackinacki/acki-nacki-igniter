@@ -15,6 +15,10 @@ pub struct UdpTransport;
 
 #[async_trait]
 impl Transport for UdpTransport {
+    fn max_datagram_payload_size(&self) -> usize {
+        MAX_UDP_DATAGRAM_PAYLOAD_SIZE
+    }
+
     async fn open(&self, bind_addr: SocketAddr) -> anyhow::Result<Box<dyn Socket>> {
         let udp_socket = UdpSocket::open(bind_addr).await?;
         Ok(Box::new(udp_socket))

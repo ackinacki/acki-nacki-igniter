@@ -20,15 +20,3 @@ listen_addr: "0.0.0.0:10000" # Address to accept P2P connections
 api_addr: "0.0.0.0:10001" # Local API server address
 interval: 1000 # Heartbeat interval in milliseconds
 
-# Bootstrap seed nodes for peer discovery
-seeds:
-  - "94.156.25.201:10000"
-  - "94.156.25.202:10000"
-  - "94.156.25.203:10000"
-  - "94.156.25.204:10000"
-  - "94.156.25.205:10000"
-  - "94.156.25.206:10000"
-  - "94.156.25.207:10000"
-  - "94.156.25.208:10000"
-  - "94.156.25.209:10000"
-  - "94.156.25.210:10000"

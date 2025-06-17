@@ -5,12 +5,10 @@ edition.workspace = true
 
 [dependencies]
 anyhow.workspace = true
-reqwest.workspace = true
 tokio.workspace = true
 tracing.workspace = true
 
 bollard = "0.18.1"
 futures-util = "0.3.31"
-semver = "1.0.25"
 serde_json = "*"
 url = "*"

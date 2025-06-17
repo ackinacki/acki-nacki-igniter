@@ -23,6 +23,10 @@ pub trait DelayMillisDist: Distribution<f32> + Send + Sync + Clone + 'static {}
 
 #[async_trait]
 impl<D: DelayMillisDist> Transport for TransportWithDelay<D> {
+    fn max_datagram_payload_size(&self) -> usize {
+        self.transport.max_datagram_payload_size()
+    }
+
     async fn open(&self, listen_addr: SocketAddr) -> anyhow::Result<Box<dyn Socket>> {
         let rng = SmallRng::from_rng(thread_rng()).unwrap();
         let socket = self.transport.open(listen_addr).await?;
@@ -83,6 +87,10 @@ struct TransportWithMessageDrop {
 
 #[async_trait]
 impl Transport for TransportWithMessageDrop {
+    fn max_datagram_payload_size(&self) -> usize {
+        self.transport.max_datagram_payload_size()
+    }
+
     async fn open(&self, listen_addr: SocketAddr) -> anyhow::Result<Box<dyn Socket>> {
         let rng = SmallRng::from_rng(thread_rng()).unwrap();
         let socket = self.transport.open(listen_addr).await?;

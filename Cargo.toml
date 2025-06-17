@@ -1,21 +1,52 @@
 [workspace]
 members = [
-    #
     "chitchat",
     "igniter",
+    "telemetry_utils",
+    "transport-layer",
     "updater",
 ]
 resolver = "3"
 
 [workspace.package]
-version = "0.2.1"
+version = "0.3.0"
 edition = "2021"
+rust-version = "1.83.0"
+license-file = "LICENSE.md"
 
 [workspace.dependencies]
 anyhow = "1"
+async-trait = { version = "0.1.85" }
 base64 = { version = "0.22.1" }
+bincode = "1.3.3"
+enum_dispatch = { version = "0.3.13" }
+faster-hex = { version = "0.10.0", features = ["serde"] }
+futures = "0.3"
 hex = "0.4.3"
-reqwest = { version = "*", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+itertools = { version = "0.14.0" }
+parking_lot = '0.12'
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
+serde_with = "3.12.0"
 thiserror = "2.0.12"
-tokio = { version = "1", features = ["macros", "net", "rt-multi-thread", "time"] }
+tokio = { version = "1.44.2", features = ["full"] }
+
+chitchat = { path = "chitchat" }
+clap = { version = "4.5.2", features = ["derive", "env"] }
+opentelemetry = { version = "0.27", features = ["metrics"] }
+opentelemetry-otlp = { version = "0.27", features = ["metrics"] }
+opentelemetry_sdk = { version = "0.27", features = ["rt-tokio"] }
+rand = "0.8.5"
+rcgen = "0.13"
+rusqlite = { version = "0.32.1", features = ["bundled"] }
+rustls = { version = "0.23.20", default-features = false }
+rustls-pemfile = { version = "2.2.0" }
+telemetry_utils = { path = "telemetry_utils" }
 tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+transport-layer = { path = "transport-layer" }
+tvm_types = { git = 'https://github.com/tvmlabs/tvm-sdk.git', tag = "v2.16.2.an" }
+url = { version = "2.5.0", features = ["serde"] }
+wtransport = { version = "0.6.0", features = ["dangerous-configuration", "quinn"] }
+zstd = { version = "0.13.3" }

@@ -1,3 +1,5 @@
 /target
 .idea
 .DS_Store
+# Needed for CI
+seeds/.git

@@ -30,6 +30,15 @@ lazy_static::lazy_static! {
             "teamgosh/acki-nacki-igniter"
         }
     };
+
+    pub static ref IGNITER_SEEDS:  &'static str = {
+        if *DEV_MODE {
+            "https://raw.githubusercontent.com/gosh-sh/acki-nacki-igniter-seeds/refs/heads/main/seeds.yaml"
+        } else {
+            "https://raw.githubusercontent.com/ackinacki/acki-nacki-igniter-seeds/refs/heads/main/seeds.yaml"
+        }
+    };
+
 }
 
 macro_rules! hide_secrets_fmt {

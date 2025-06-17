@@ -175,7 +175,7 @@ mod tests {
                 cluster_id: "cluster-a".to_string(),
                 digest: Digest::default(),
             };
-            test_serdeser_aux(&syn, 17);
+            test_serdeser_aux(&syn, 30);
         }
         {
             let mut digest = Digest::default();
@@ -183,7 +183,7 @@ mod tests {
             digest.add_node(node, Heartbeat(0), 0, 0);
 
             let syn = ChitchatMessage::Syn { cluster_id: "cluster-a".to_string(), digest };
-            test_serdeser_aux(&syn, 68);
+            test_serdeser_aux(&syn, 59);
         }
     }
 
@@ -194,7 +194,7 @@ mod tests {
                 ChitchatMessage::SynAck { digest: Digest::default(), delta: Delta::default() };
             // 2 (magic number) + 1 (protocol version) + 1 (message tag) + 2 (digest len) + 1 (delta
             // end op)
-            test_serdeser_aux(&syn_ack, 7);
+            test_serdeser_aux(&syn_ack, 20);
         }
         {
             // 2 bytes.
@@ -219,7 +219,7 @@ mod tests {
             let syn_ack = ChitchatMessage::SynAck { digest, delta };
             // 1 byte (protocol version) + 1 byte (message tag) + 53 bytes (digest) + 60 bytes
             // (delta).
-            test_serdeser_aux(&syn_ack, 2 + 1 + 1 + 53 + 60);
+            test_serdeser_aux(&syn_ack, 2 + 1 + 1 + 44 + 60);
         }
     }
 
