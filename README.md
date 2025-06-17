@@ -53,7 +53,7 @@ For a license to be delegated to this Node, you must obtain a delegation signatu
 A Node can operate with a minimum of one license and a maximum of ten licenses delegated to a single Node.
 
 Provide License Owner with your Node Provider pubkey and ask them to sign a delegation.
-Delegation Signature can be generated via [Acki Nacki Dashboard](hhttps://dashboard.ackinacki.com/licenses) or [manually](./docs/Manual_license_delegation.md)
+Delegation Signature can be generated via [Acki Nacki Dashboard](https://dashboard.ackinacki.com/licenses) or [manually](./docs/Manual_license_delegation.md)
 
 ## Prepare Configuration Files
 
