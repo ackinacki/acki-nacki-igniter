@@ -4,8 +4,9 @@ use std::ops::Bound;
 use std::sync::atomic::AtomicUsize;
 use std::sync::atomic::Ordering;
 use std::sync::Arc;
-use std::sync::RwLock;
 use std::sync::Weak;
+
+use parking_lot::RwLock;
 
 use crate::KeyChangeEvent;
 
@@ -28,7 +29,7 @@ impl ListenerHandle {
 impl Drop for ListenerHandle {
     fn drop(&mut self) {
         if let Some(listeners) = self.listeners.upgrade() {
-            let mut listeners_guard = listeners.write().unwrap();
+            let mut listeners_guard = listeners.write();
             listeners_guard.remove_listener(&self.prefix, self.listener_id);
         }
     }
@@ -60,14 +61,14 @@ impl Listeners {
     ) -> ListenerHandle {
         let key_prefix = key_prefix.to_string();
         let weak_listeners = Arc::downgrade(&self.inner);
-        let mut inner_listener_guard = self.inner.write().unwrap();
+        let mut inner_listener_guard = self.inner.write();
         let new_idx = inner_listener_guard.listener_idx.fetch_add(1, Ordering::Relaxed);
         inner_listener_guard.subscribe_event(&key_prefix, new_idx, boxed_listener);
         ListenerHandle { prefix: key_prefix, listener_id: new_idx, listeners: weak_listeners }
     }
 
     pub(crate) fn trigger_event(&mut self, key_change_event: KeyChangeEvent) {
-        self.inner.read().unwrap().trigger_event(key_change_event);
+        self.inner.read().trigger_event(key_change_event);
     }
 }
 

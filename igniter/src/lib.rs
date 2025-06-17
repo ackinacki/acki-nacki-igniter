@@ -13,7 +13,7 @@ mod config;
 pub mod errors;
 pub mod gossip;
 pub mod open_api;
-pub mod transport;
+// pub mod transport;
 
 use std::collections::HashMap;
 use std::collections::HashSet;

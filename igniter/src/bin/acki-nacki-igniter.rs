@@ -3,11 +3,7 @@ use std::process::exit;
 use std::thread;
 
 use acki_nacki_igniter::cli::CLI;
-use acki_nacki_igniter::gossip;
-use acki_nacki_igniter::open_api::server;
-use acki_nacki_igniter::transport;
 use acki_nacki_igniter::IGNITER_IMAGE;
-use ed25519_dalek::SigningKey;
 use tracing::error;
 use tracing::info;
 use tracing_subscriber::layer::SubscriberExt;
@@ -77,27 +73,34 @@ async fn tokio_main_inner() -> anyhow::Result<()> {
 
     let initial_key_values = params.to_gossip()?;
 
-    let signing_key = SigningKey::generate(&mut rand::thread_rng());
+    let listen_addr = CLI.config.listen_addr;
+    let api_addr = CLI.config.api_addr;
+    let seeds = CLI.config.seeds.clone();
+    let advertise_addr = CLI.config.advertise_addr;
+    let name = env!("CARGO_PKG_NAME");
 
-    let udp_transport = transport::signed_udp::UdpSignedTransport::new(
-        vec![],
-        signing_key,
+    tracing::info!("Gossip advertise addr: {:?}", advertise_addr);
+
+    let (gossip_handle, gossip_rest_handle) = acki_nacki_igniter::gossip::run(
+        listen_addr,
+        api_addr,
         chitchat::transport::UdpTransport,
-    );
-
-    let gossip_state = gossip::run(initial_key_values, &udp_transport).await?;
-
-    let rest_server_handle = tokio::spawn(server::run(gossip_state.chitchat()));
+        advertise_addr,
+        seeds,
+        name.to_string(),
+        initial_key_values,
+    )
+    .await?;
 
     tokio::select! {
         v = updater_handle => {
             anyhow::bail!("Container updater failed: {v:?}");
         }
 
-        v = gossip_state.join_handle => {
+        v = gossip_handle.join_handle => {
             anyhow::bail!("Gossip server failed: {v:?}");
         }
-        v = rest_server_handle => {
+        v = gossip_rest_handle => {
             anyhow::bail!("API server failed: {v:?}");
         }
     }

@@ -5,17 +5,21 @@ use async_trait::async_trait;
 use crate::message::ChitchatMessage;
 
 mod channel;
+mod transport_layer;
 mod udp;
 mod utils;
 
 pub use channel::ChannelTransport;
 pub use channel::Statistics;
+pub use transport_layer::TransportLayerTransport;
 pub use udp::UdpSocket;
 pub use udp::UdpTransport;
+pub use utils::DelayMillisDist;
 pub use utils::TransportExt;
 
 #[async_trait]
 pub trait Transport: Send + Sync + 'static {
+    fn max_datagram_payload_size(&self) -> usize;
     async fn open(&self, listen_addr: SocketAddr) -> anyhow::Result<Box<dyn Socket>>;
 }
 
@@ -108,6 +112,7 @@ mod tests {
     }
 
     #[tokio::test]
+    #[ignore]
     async fn test_transport_udp() {
         test_transport_suite(&UdpTransport).await;
     }

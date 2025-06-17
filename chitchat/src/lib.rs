@@ -38,6 +38,7 @@ use crate::digest::Digest;
 pub use crate::message::ChitchatMessage;
 pub use crate::server::spawn_chitchat;
 pub use crate::server::ChitchatHandle;
+pub use crate::server::ChitchatRef;
 use crate::state::ClusterState;
 pub use crate::types::ChitchatId;
 pub use crate::types::DeletionStatus;
@@ -54,7 +55,7 @@ pub use crate::types::VersionedValue;
 /// we send the self digest "in full".
 /// An Ethernet frame size of 1400B would limit us to 20 nodes
 /// or so.
-pub(crate) const MAX_UDP_DATAGRAM_PAYLOAD_SIZE: usize = 65_507;
+pub const MAX_UDP_DATAGRAM_PAYLOAD_SIZE: usize = 65_507;
 
 pub struct Chitchat {
     config: ChitchatConfig,
@@ -64,6 +65,7 @@ pub struct Chitchat {
     previous_live_nodes: HashMap<ChitchatId, Version>,
     live_nodes_watcher_tx: watch::Sender<BTreeMap<ChitchatId, NodeState>>,
     live_nodes_watcher_rx: watch::Receiver<BTreeMap<ChitchatId, NodeState>>,
+    max_datagram_payload_size: usize,
 }
 
 impl Chitchat {
@@ -71,6 +73,7 @@ impl Chitchat {
         config: ChitchatConfig,
         seed_addrs: watch::Receiver<HashSet<SocketAddr>>,
         initial_key_values: Vec<(String, String)>,
+        max_datagram_payload_size: usize,
     ) -> Self {
         let failure_detector = FailureDetector::new(config.failure_detector_config.clone());
         let previous_live_nodes = HashMap::new();
@@ -82,6 +85,7 @@ impl Chitchat {
             previous_live_nodes,
             live_nodes_watcher_tx,
             live_nodes_watcher_rx,
+            max_datagram_payload_size,
         };
 
         let self_node_state = chitchat.self_node_state();
@@ -145,7 +149,8 @@ impl Chitchat {
                 let scheduled_for_deletion: HashSet<_> =
                     self.scheduled_for_deletion_nodes().collect();
                 let self_digest = self.compute_digest(&scheduled_for_deletion);
-                let delta_mtu = MAX_UDP_DATAGRAM_PAYLOAD_SIZE - 1 - digest.serialized_len();
+
+                let delta_mtu = self.max_datagram_payload_size - 1 - self_digest.serialized_len();
                 let delta = self.cluster_state.compute_partial_delta_respecting_mtu(
                     &digest,
                     delta_mtu,
@@ -160,7 +165,7 @@ impl Chitchat {
                     self.scheduled_for_deletion_nodes().collect::<HashSet<_>>();
                 let delta = self.cluster_state.compute_partial_delta_respecting_mtu(
                     &digest,
-                    MAX_UDP_DATAGRAM_PAYLOAD_SIZE - 1,
+                    self.max_datagram_payload_size - 1,
                     &scheduled_for_deletion,
                 );
                 Some(ChitchatMessage::Ack { delta })
@@ -406,13 +411,13 @@ mod tests {
     use std::sync::Arc;
     use std::time::Duration;
 
-    use tokio::sync::Mutex;
     use tokio::time;
     use tokio_stream::StreamExt;
 
     use super::*;
     use crate::server::spawn_chitchat;
     use crate::server::ChitchatHandle;
+    use crate::server::ChitchatRef;
     use crate::transport::ChannelTransport;
     use crate::transport::Transport;
 
@@ -460,7 +465,7 @@ mod tests {
     async fn start_node(
         chitchat_id: ChitchatId,
         seeds: &[String],
-        transport: &dyn Transport,
+        transport: &impl Transport,
     ) -> ChitchatHandle {
         let config = ChitchatConfig {
             chitchat_id: chitchat_id.clone(),
@@ -483,7 +488,7 @@ mod tests {
 
     async fn setup_nodes(
         port_range: RangeInclusive<u16>,
-        transport: &dyn Transport,
+        transport: &impl Transport,
     ) -> Vec<ChitchatHandle> {
         let chitchat_ids: Vec<ChitchatId> = port_range.map(ChitchatId::for_local_test).collect();
         let node_without_seed = start_node(chitchat_ids[0].clone(), &[], transport).await;
@@ -506,13 +511,10 @@ mod tests {
         Ok(())
     }
 
-    async fn wait_for_chitchat_state(
-        chitchat: Arc<Mutex<Chitchat>>,
-        expected_nodes: &[ChitchatId],
-    ) {
+    async fn wait_for_chitchat_state(chitchat: ChitchatRef, expected_nodes: &[ChitchatId]) {
         let expected_nodes = expected_nodes.iter().collect::<HashSet<_>>();
         let mut live_nodes_watcher =
-            chitchat.lock().await.live_nodes_watch_stream().skip_while(|live_nodes| {
+            chitchat.lock().live_nodes_watch_stream().skip_while(|live_nodes| {
                 if live_nodes.len() != expected_nodes.len() {
                     return true;
                 }
@@ -534,12 +536,14 @@ mod tests {
             node_config1,
             empty_seeds.clone(),
             vec![("key1a".to_string(), "1".to_string()), ("key2a".to_string(), "2".to_string())],
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
         );
         let node_config2 = ChitchatConfig::for_test(10_002);
         let mut node2 = Chitchat::with_chitchat_id_and_seeds(
             node_config2,
             empty_seeds,
             vec![("key1b".to_string(), "1".to_string()), ("key2b".to_string(), "2".to_string())],
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
         );
         run_chitchat_handshake(&mut node1, &mut node2);
         assert_nodes_sync(&[&node1, &node2]);
@@ -559,8 +563,12 @@ mod tests {
     fn test_chitchat_dead_node_liveness() {
         let node_config1 = ChitchatConfig::for_test(10_001);
         let empty_seeds = watch::channel(Default::default()).1;
-        let mut node1 =
-            Chitchat::with_chitchat_id_and_seeds(node_config1, empty_seeds.clone(), Vec::new());
+        let mut node1 = Chitchat::with_chitchat_id_and_seeds(
+            node_config1,
+            empty_seeds.clone(),
+            Vec::new(),
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
+        );
         let chitchat_id = ChitchatId::for_local_test(10u16);
         node1.reset_node_state(&chitchat_id, std::iter::empty(), 10_000, 10u64);
         node1.report_heartbeat(&chitchat_id, Heartbeat(10_000u64));
@@ -580,10 +588,19 @@ mod tests {
         tokio::time::pause();
         let node_config1 = ChitchatConfig::for_test(10_001);
         let empty_seeds = watch::channel(Default::default()).1;
-        let mut node1 =
-            Chitchat::with_chitchat_id_and_seeds(node_config1, empty_seeds.clone(), vec![]);
+        let mut node1 = Chitchat::with_chitchat_id_and_seeds(
+            node_config1,
+            empty_seeds.clone(),
+            vec![],
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
+        );
         let node_config2 = ChitchatConfig::for_test(10_002);
-        let mut node2 = Chitchat::with_chitchat_id_and_seeds(node_config2, empty_seeds, vec![]);
+        let mut node2 = Chitchat::with_chitchat_id_and_seeds(
+            node_config2,
+            empty_seeds,
+            vec![],
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
+        );
         // Because of compression, we need a lot of keys to reach the MTU.
         for i in 0..20_000 {
             let key = format!("k{}", i);
@@ -613,7 +630,7 @@ mod tests {
         let transport = ChannelTransport::with_mtu(MAX_UDP_DATAGRAM_PAYLOAD_SIZE);
         let nodes = setup_nodes(20001..=20005, &transport).await;
         let node2 = nodes.get(1).unwrap();
-        let mut live_nodes_stream = node2.chitchat().lock().await.live_nodes_watch_stream();
+        let mut live_nodes_stream = node2.chitchat().lock().live_nodes_watch_stream();
         let live_members = loop {
             let live_nodes = live_nodes_stream.next().await.unwrap();
             if live_nodes.len() == 5 {
@@ -657,7 +674,7 @@ mod tests {
 
         let mut num_live_nodes = 0;
         assert!(tokio::time::timeout(Duration::from_secs(1), async {
-            let mut live_nodes_stream = nodes[2].chitchat().lock().await.live_nodes_watch_stream();
+            let mut live_nodes_stream = nodes[2].chitchat().lock().live_nodes_watch_stream();
             loop {
                 let live_nodes = live_nodes_stream.next().await.unwrap();
                 num_live_nodes = live_nodes.len();
@@ -670,11 +687,11 @@ mod tests {
         .is_err());
         assert_eq!(num_live_nodes, 0);
 
-        nodes[0].chitchat().lock().await.self_node_state().set("READY", "true");
-        nodes[1].chitchat().lock().await.self_node_state().set("READY", "true");
-        nodes[2].chitchat().lock().await.self_node_state().set("READY", "true");
+        nodes[0].chitchat().lock().self_node_state().set("READY", "true");
+        nodes[1].chitchat().lock().self_node_state().set("READY", "true");
+        nodes[2].chitchat().lock().self_node_state().set("READY", "true");
 
-        let mut live_nodes_stream = nodes[2].chitchat().lock().await.live_nodes_watch_stream();
+        let mut live_nodes_stream = nodes[2].chitchat().lock().live_nodes_watch_stream();
         let live_members = loop {
             let live_nodes = live_nodes_stream.next().await.unwrap();
             if live_nodes.len() == 3 {
@@ -685,7 +702,7 @@ mod tests {
             assert!(live_members.contains_key(node.chitchat_id()));
         }
 
-        nodes[0].chitchat().lock().await.self_node_state().delete("READY");
+        nodes[0].chitchat().lock().self_node_state().delete("READY");
 
         let live_members = loop {
             let live_nodes = live_nodes_stream.next().await.unwrap();
@@ -696,7 +713,7 @@ mod tests {
         assert!(live_members.contains_key(&chitchat_ids[1]));
         assert!(live_members.contains_key(&chitchat_ids[2]));
 
-        nodes[1].chitchat().lock().await.self_node_state().set("READY", "false");
+        nodes[1].chitchat().lock().self_node_state().set("READY", "false");
 
         let live_members = loop {
             let live_nodes = live_nodes_stream.next().await.unwrap();
@@ -806,7 +823,7 @@ mod tests {
         let node1_id = {
             let node1 = nodes.first().unwrap();
             let node1_chitchat = node1.chitchat();
-            node1_chitchat.lock().await.self_node_state().set("test_key", "test_val");
+            node1_chitchat.lock().self_node_state().set("test_key", "test_val");
             node1.chitchat_id().clone()
         };
 
@@ -822,7 +839,6 @@ mod tests {
             // We have received node1's key
             let value = node2_chitchat
                 .lock()
-                .await
                 .node_state(&node1_id)
                 .unwrap()
                 .get("test_key")
@@ -860,7 +876,7 @@ mod tests {
         .await;
 
         {
-            let new_node_chitchat_guard = new_node_chitchat.lock().await;
+            let new_node_chitchat_guard = new_node_chitchat.lock();
             let test_val =
                 new_node_chitchat_guard.node_state(&node1_id).unwrap().get("test_key").unwrap();
             assert_eq!(test_val, "test_val");
@@ -933,7 +949,7 @@ mod tests {
         // Dead node should still be known to the cluster.
         let dead_chitchat_id = ChitchatId::for_local_test(60003);
         for node in &nodes {
-            assert!(node.chitchat().lock().await.node_state(&dead_chitchat_id).is_some());
+            assert!(node.chitchat().lock().node_state(&dead_chitchat_id).is_some());
         }
 
         // Wait a bit more than `dead_node_grace_period` since all nodes will not
@@ -943,7 +959,7 @@ mod tests {
 
         // Dead node should no longer be known to the cluster.
         for node in &nodes {
-            assert!(node.chitchat().lock().await.node_state(&dead_chitchat_id).is_none());
+            assert!(node.chitchat().lock().node_state(&dead_chitchat_id).is_none());
         }
 
         shutdown_nodes(nodes).await?;
@@ -958,6 +974,7 @@ mod tests {
             node_config1,
             empty_seeds.clone(),
             vec![("self1:suffix1".to_string(), "hello1".to_string())],
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
         );
         let counter_self_key: Arc<AtomicUsize> = Default::default();
         let counter_other_key: Arc<AtomicUsize> = Default::default();
@@ -993,6 +1010,7 @@ mod tests {
             node_config2,
             empty_seeds,
             vec![("other:suffix".to_string(), "hello".to_string())],
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
         );
 
         assert_eq!(counter_self_key.load(Ordering::SeqCst), 0);
@@ -1042,7 +1060,12 @@ mod tests {
         }));
         let (_seed_addrs_rx, seed_addrs_tx) = watch::channel(Default::default());
 
-        let mut node = Chitchat::with_chitchat_id_and_seeds(config, seed_addrs_tx, Vec::new());
+        let mut node = Chitchat::with_chitchat_id_and_seeds(
+            config,
+            seed_addrs_tx,
+            Vec::new(),
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
+        );
         let delta = Delta::default();
         node.process_delta(delta);
 
@@ -1058,7 +1081,12 @@ mod tests {
     async fn test_reset_node_state() {
         let config = ChitchatConfig::for_test(10_001);
         let (_seed_addrs_rx, seed_addrs_tx) = watch::channel(Default::default());
-        let mut node = Chitchat::with_chitchat_id_and_seeds(config, seed_addrs_tx, Vec::new());
+        let mut node = Chitchat::with_chitchat_id_and_seeds(
+            config,
+            seed_addrs_tx,
+            Vec::new(),
+            MAX_UDP_DATAGRAM_PAYLOAD_SIZE,
+        );
 
         let chitchat_id = ChitchatId::for_local_test(10_002);
         node.reset_node_state(

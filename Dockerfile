@@ -8,6 +8,7 @@ RUN \
   --mount=type=cache,target=/usr/local/cargo/git \
   --mount=type=cache,target=/target \
   <<EOF
+  apt install libnuma-dev
   cargo build --release --target-dir=/target
   cp /target/release/acki-nacki-igniter /usr/local/bin/
 EOF

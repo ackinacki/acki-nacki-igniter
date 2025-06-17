@@ -163,7 +163,7 @@ impl Default for FailureDetectorConfig {
             sampling_window_size: 1_000,
             max_interval: Duration::from_secs(10),
             initial_interval: Duration::from_secs(5),
-            dead_node_grace_period: Duration::from_secs(24 * 60 * 60), // 24 hours
+            dead_node_grace_period: Duration::from_secs(20), // 24 hours
         }
     }
 }

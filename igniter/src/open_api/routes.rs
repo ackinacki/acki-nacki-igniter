@@ -1,17 +1,15 @@
 use std::collections::HashMap;
-use std::sync::Arc;
 use std::time::Duration;
 use std::vec;
 
 use anyhow::anyhow;
-use chitchat::Chitchat;
 use chitchat::ChitchatId;
+use chitchat::ChitchatRef;
 use chitchat::ClusterStateSnapshot;
 use poem_openapi::payload::PlainText;
 use poem_openapi::OpenApi;
 use serde::Deserialize;
 use serde::Serialize;
-use tokio::sync::Mutex;
 
 use crate::config::LicenceSignature;
 use crate::config::ProxyConfig;
@@ -29,11 +27,11 @@ pub struct ApiResponse {
 }
 
 pub struct Api {
-    pub chitchat: Arc<Mutex<Chitchat>>,
+    pub chitchat: ChitchatRef,
 }
 
 impl Api {
-    pub fn new(chitchat: Arc<Mutex<Chitchat>>) -> Self {
+    pub fn new(chitchat: ChitchatRef) -> Self {
         Self { chitchat }
     }
 }
@@ -44,7 +42,7 @@ impl Api {
     #[oai(path = "/", method = "get")]
     async fn index(&self) -> PlainText<String> {
         let (cluster_id, live_nodes, dead_nodes, mut state_snapshot) = {
-            let chitchat_guard = self.chitchat.lock().await;
+            let chitchat_guard = self.chitchat.lock();
             (
                 chitchat_guard.cluster_id().to_string(),
                 chitchat_guard.live_nodes().cloned().collect::<Vec<_>>(),
@@ -86,12 +84,12 @@ impl Api {
     }
 
     /// Export data in format applicable for zerostate.
-    #[oai(path = "/export/", method = "get")]
+    #[oai(path = "/export", method = "get")]
     async fn export(&self) -> PlainText<String> {
         // Creating unverified zerostate from chitchat info
         let mut zerostate = vec![];
         {
-            let chitchat_guard = self.chitchat.lock().await;
+            let chitchat_guard = self.chitchat.lock();
 
             for state in chitchat_guard.state_snapshot().node_states {
                 let k_v: HashMap<String, String> = state
