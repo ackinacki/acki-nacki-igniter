@@ -1,0 +1,1147 @@
+[
+    {
+        "pubkey": "edf09e5ec0c8ff09f76b5851cc0c1f2795aa6e6380be712721b94280dccdd113",
+        "bls_key": "9032f59339b8f1933adfd5e8a7c8047ed19967f5cd240e6e272370d0427176f109466eee4714fd989552f70b89ab12a4",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "7a760dc2-50d4-4559-8d6d-4e84a823dd02",
+                "license_owner_pubkey": "01dc989ca13eda70c45fc145442ad254bb1195509381deb169f57dfc13a0bccb",
+                "provider_pubkey": "edf09e5ec0c8ff09f76b5851cc0c1f2795aa6e6380be712721b94280dccdd113",
+                "delegation_sig": "OUp2dXdlgcrVM7pzyKa3iwj3O05TqgZE1GH+D+ZhfspH0MiEkIB3N5lGuCJxyCRwEAsGIHEvMaGXD2RVFwXnBQ==",
+                "delegation_confirm_sig": "aMhE7c9cx2nkyRdNrRPPhYMMq9bO212xZ/6ioYkid1KpCWVfebddv7ksfz7MK9y0lsnRaeQwQJP0NdWlgT3lAA==",
+                "timestamp": 1728813342,
+                "license_proof_sig": "cS3dnKL8UZTyLfrbfeuG2wa+v3fAXYttI12M4ZZtDwUotMXZOp2d5rF9Bx3bJeMcdt6MxwSbuq992rBcbYJ9CQ=="
+            },
+            {
+                "license_id": "cc63d45a-b7ae-4452-912d-fc8ca2b1f4b2",
+                "license_owner_pubkey": "01dc989ca13eda70c45fc145442ad254bb1195509381deb169f57dfc13a0bccb",
+                "provider_pubkey": "edf09e5ec0c8ff09f76b5851cc0c1f2795aa6e6380be712721b94280dccdd113",
+                "delegation_sig": "4EIitJ7DzINgSbefg+e7X7syvV+h2sXeAsaPjQSN/jxNe9z6+vuADFNlaQVZUrLnHMsWke4nGVShLGLzwXYmCg==",
+                "delegation_confirm_sig": "rYqr8n15IjH5Zrz8VNN0IuXRJzL5BX6Z6RwQKBnj30QGA12v+/1IZkPql8V/QgiW2Q9DtLKwXm33Pz8+0BXACw==",
+                "timestamp": 1728917492,
+                "license_proof_sig": "Im4lZea7q4WgDL1BE1aoE/yqGl4lq2LjvslNPcFK2s2VkEoeatLXJVt1PrkDWmkpkHvjDSbmxnCcgJaWw+L+Aw=="
+            }
+        ],
+        "licenses": {
+            "01dc989ca13eda70c45fc145442ad254bb1195509381deb169f57dfc13a0bccb": 2
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "1705e9dd67e19c49835a291132a5ca81b1619b154ad4308bdc75d83a81705466",
+        "bls_key": "92bd92bd46bd37c0aedd295454dc6963110c7d7a66f30a4edbc76ad17989fd4b5364c613beb897a3426b210494c3849b",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "50f6e81e-7f64-455f-b811-c23f170f9db2",
+                "license_owner_pubkey": "82941f253c40e488403e513a95852404e7b08276915c96c30890105e6ad2b716",
+                "provider_pubkey": "383d3c2c5531ee401a4e675ee13a18fbdb355038b18f761100c5621d93c19b98",
+                "delegation_sig": "6dWd/CAGKlodWO5KVGebNESVfohM2Dx3/ijnLBGeQm9vZWffl+kHeWOB87m18NLNCfhwykSow1oGHtilpFouDA==",
+                "delegation_confirm_sig": "xqnCL5uZle33ix1XqfDoRi/h8y28sQobgih7GoEqbAcfxr3eGg3UZEjNVQMuVyXs98NQbkqxGXXdxOVRkG/1CA==",
+                "timestamp": 1745660664,
+                "license_proof_sig": "Dx6BjZSow+cz7xXcd/mca5nIZC9uSklbICLlFenDi16oD7Bp3qfzKBfW9hz5xhWYxLmkxA3Ll0WKlApd5hYJCw=="
+            }
+        ],
+        "licenses": {
+            "82941f253c40e488403e513a95852404e7b08276915c96c30890105e6ad2b716": 1
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "f02040175c4560b5a5e9208596fcd1ee38060619ed06eacb8395d9714216baab",
+        "bls_key": "abdf1094d58ca8484a016b16ea1f2bed2cf8780737ea5d3f507352ecee0e5572c2fdf80a8aba9baa5d5a12571019b093",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "4bb1cd27-0911-4517-9cb4-6ae166492751",
+                "license_owner_pubkey": "3fcd8fba4873fcb0c30a174ef2d5941d89e01050db1b645d7133dcbd07e8d646",
+                "provider_pubkey": "36cb9804477776bd55b75034b71001c7fe68f885f05c3b6e4529a1f11fa2c938",
+                "delegation_sig": "ul5Y/taBQE1qQdwUFavtzrLYu+a/WDrwsUPLWGbZ/RZhPWBnLmh3Vl2pV98KeFtS53pMyaQsm15cnxQwSQKIBw==",
+                "delegation_confirm_sig": "EWaFeAvXeOCOdp+fbHC6j2yfkjgcqwskvSvHX2jQ/C3hJbaUV2vLmfUayCc+EL0qvwGDc9dSc3fbtcY+U3IYCA==",
+                "timestamp": 1728032585,
+                "license_proof_sig": "4t0TjfRApBIHl8iHW7aRAlkifXv4GrtTQ5wDbZag3X6OZOTyKaEEUvkBb4GCv1ySFvNRrdUVwqosfJI1kasfDg=="
+            }
+        ],
+        "licenses": {
+            "3fcd8fba4873fcb0c30a174ef2d5941d89e01050db1b645d7133dcbd07e8d646": 1
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "264dfdffe6b5d5774ecb31b3c2360fc77638ac7c9b091ba30e84a4ffd2937a77",
+        "bls_key": "996fd576660f37fabbe7b675d20a6f904addf44021b0caf21f93be4dd2986761c3b588c65cd8f6a8ec6f167704485130",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "0cfc0d6a-9759-4671-be97-6d06e37e6f89",
+                "license_owner_pubkey": "fbb461a1fb291c3a26c3c171fca4a2cfa97db82c1e5a8c692c9cb9c3e89a1803",
+                "provider_pubkey": "1947034af4995be9f4e5ef562ee2f5ff72b03415127eb0f1a64c7449f3775ddd",
+                "delegation_sig": "jJR39YiIDL5vOLrAStGVHVzqB64WJuF39AeUMGFN4owmXXtjneJ+YkhkrFaEx9IO5RFa4wnUXnb1TqgfU9NiCw==",
+                "delegation_confirm_sig": "ZI7MOpSwy/bjC9PrEDxcpzZygLw4iSdPt2k8GSJwFZ08iUJpDOzjEfa1/UQ7nFZPuJELQqjU+MeMhCWV5NBGDA==",
+                "timestamp": 1750612234,
+                "license_proof_sig": "icwJMlL7SA1Yaf3tDw/YfhK+tUAZNxg15OJs2B2/+hAPId+C6E+tymL4cVoUf6sPpJN/Qed/5N6OTe9YPkaYDw=="
+            },
+            {
+                "license_id": "15aad09b-e055-481d-9e5f-bef30cbd1a46",
+                "license_owner_pubkey": "fbb461a1fb291c3a26c3c171fca4a2cfa97db82c1e5a8c692c9cb9c3e89a1803",
+                "provider_pubkey": "1947034af4995be9f4e5ef562ee2f5ff72b03415127eb0f1a64c7449f3775ddd",
+                "delegation_sig": "NuED8daT4Qdpeaqdw+T/8Fx0HRUvxw2pdJIDrm7NmOOo63qkL6oLh01P0Ks+6dnL5LqMiElTivBuB65KhvjvBA==",
+                "delegation_confirm_sig": "KzIJIKnjUe2AO8SsJsqNtBVfRvfTLNyAZw8ei48TiFnLu5Uq9uWfBSbNnMM/+9d/J/52e85aBm4Kn5Wt/KDKAw==",
+                "timestamp": 1750612277,
+                "license_proof_sig": "YquDd8nObeRENAI2312mtbhZMot1WwJpeXibZtkEsG6HWGjGOkSwCp9pw2dijh0bozYPyJnc+d+LSZ59LuUEBg=="
+            },
+            {
+                "license_id": "93904998-d414-42b0-a379-337fb7bdb0da",
+                "license_owner_pubkey": "fbb461a1fb291c3a26c3c171fca4a2cfa97db82c1e5a8c692c9cb9c3e89a1803",
+                "provider_pubkey": "1947034af4995be9f4e5ef562ee2f5ff72b03415127eb0f1a64c7449f3775ddd",
+                "delegation_sig": "C/YMI93T6cEUDBhpeuYa/1RKQilV/REj3+J/Dim1gZBlnPtSMtAO5jIbtyqmZZiTIkKZHCKwu6oHMfNTCj74BA==",
+                "delegation_confirm_sig": "9u7WUXZ5y6Sre2uldirTlXG/Pphmuts8lxFcutxoCj9qOwpSLcgzCV/1qnxkd+xSaU31K66ULptV438f58gaAg==",
+                "timestamp": 1750612328,
+                "license_proof_sig": "yCdZ2K62qTajVPCnCtPRqmpvgV2Bj+AQqFlsDoe1btvedNZtvLeMQ3A+iRLzr2FyXwzrgEncMio//AxDpH0oAg=="
+            },
+            {
+                "license_id": "35f4a3d4-be9f-4e9e-90f8-c1d50b4e7008",
+                "license_owner_pubkey": "81454b464cc06bd32c604cca27d2ff18abba639dae45ed4266b921fcc18992e0",
+                "provider_pubkey": "1947034af4995be9f4e5ef562ee2f5ff72b03415127eb0f1a64c7449f3775ddd",
+                "delegation_sig": "j01QfOfuarR4esj5zrJVkynrJgJWlA82UB8F211Tg28zGgY+6r8lNj8Zj8n3fcuIbF/C4+XJdBV9+axMyrU/Cg==",
+                "delegation_confirm_sig": "8Bg7c3mS8FjlzmLF+m4Idp+oRiG/xjM/SDeZ3bUMjtOJlZav/5kuKwuIxmDTopuo752RE5TepXxnckH3+iddDw==",
+                "timestamp": 1750612374,
+                "license_proof_sig": "65bKm079UppPA/xSGc3Hco3hBJWmya5cr/qmvdBq/8uiFR5vOT3CsZkhPg35ulFq07wuNhroHY4vFhXJIO01BQ=="
+            },
+            {
+                "license_id": "7683d949-2053-46fe-a628-8f0def85d8db",
+                "license_owner_pubkey": "81454b464cc06bd32c604cca27d2ff18abba639dae45ed4266b921fcc18992e0",
+                "provider_pubkey": "1947034af4995be9f4e5ef562ee2f5ff72b03415127eb0f1a64c7449f3775ddd",
+                "delegation_sig": "9WhiKAn1W7LwErkc2xUQCWPOQfrP0VqxtL49+TLJw5jWruTdDzzY59wYu5DDoApxCyIbScJ8t6vtmCakATeADQ==",
+                "delegation_confirm_sig": "ejvxfe3FC06+1sWQ3NtFsLVDUXmL8MMXENZC5MfGiZhjpE/1b0RiyBNK9IYY/Fx5z9jiRDOE6jKULecwCLt9Dw==",
+                "timestamp": 1750612423,
+                "license_proof_sig": "EZUHdm4Rwjty2KcI/bn8H3nMPklC6g5h0gAxHHmV2wyMtihJSVKGlA6wlxL+av1EcG1PsGnaAQEEkTTBncHeAg=="
+            },
+            {
+                "license_id": "f5f40934-b37e-4584-9d33-686455094bb4",
+                "license_owner_pubkey": "81454b464cc06bd32c604cca27d2ff18abba639dae45ed4266b921fcc18992e0",
+                "provider_pubkey": "1947034af4995be9f4e5ef562ee2f5ff72b03415127eb0f1a64c7449f3775ddd",
+                "delegation_sig": "YhZsJraPmRgBzfvnDerSrqbKGuGr8PQv9VBbk6326CRgsOna/6U0eAcF/ucMGlkYwygI+D/cuQ5TnK0QfH3IBg==",
+                "delegation_confirm_sig": "cA8TXD2XUrNrlUaLZ5GEztAWTMKz6dFc9nBx4VyxrrP2Idt3LCJDDiwcavL079IqOtLA7u+7vJvdPdlTTopJAA==",
+                "timestamp": 1750612475,
+                "license_proof_sig": "WsxkzUPM/0wrAR8P+rps6AyevnFbfMWIeR9fXI6v39dg0Gv3C1ubdA5ZbUb0OAsE+Kg05mEc2s/NseUG2mDXAg=="
+            }
+        ],
+        "licenses": {
+            "fbb461a1fb291c3a26c3c171fca4a2cfa97db82c1e5a8c692c9cb9c3e89a1803": 3,
+            "81454b464cc06bd32c604cca27d2ff18abba639dae45ed4266b921fcc18992e0": 3
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "3ee56774be17ee3c2cd7622cfa3783533f22aa6722fa9bc9619a6e492f0d09e6",
+        "bls_key": "8fde0d901b0599a6ef8a40bad8d379d3221154211b1ad26870daab0752ab1b00ba33216064e89b5c5df7a1bb3fa7e4f2",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "03e72096-0e45-417f-94ef-c4264d7a23d4",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "SdKquXDOvpAIbTmlEhY4RFAEQvnqMAnxRMYhj0fAJKDxv5/RAOlnJQm7AErbb5gUexweEniVQEOE6VmZx2BsCQ==",
+                "delegation_confirm_sig": "oExONEUoNtnudG9rz8OujmuySKUtknsW7Tuqln72QroYubLPX65jPc8K8fT/lnHGLkFofgwiCOTIWq+Yerp9DA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "yP0V0G0tkbocexMZ58djXW9xmR8zQIeAhxkdmZW+viLzDO3NoBRml45tTbMsa9kjio1gXD0YKQqUlqVMwLJ+Dw=="
+            },
+            {
+                "license_id": "078f1c48-974e-4a37-8ca0-faa70ab66869",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "K0mfh0dKOG9xL9x7G8xD6zEqXSuHVngyTA8X0yE/JJslvnA8DC2pb398TiVg+WszPxXMZj2G4iU3BjfqDozfBQ==",
+                "delegation_confirm_sig": "Pbax3WzX3uWEfwAKA97JDRZdblnNjjLJEE2i8uk2SqlkqtDhaIMlngAjgA98iChytGJwS/voVQKqrKUQD6q/CA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "+YKak/DRjZqq+X4gOwePGSzqi9+WD+VMuGhSPVo9NcBMTcVr6lvfbE9MZNTcwKf7swfvI7hXEklgv0oMzsGADA=="
+            },
+            {
+                "license_id": "0afa6b84-a6c9-4c10-a85f-e78ca7daffb1",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "L/Pl2zMYzjFhujDbGoSsLRP7QO/wjziV1+dfM6QMfhuWgODX4skKALyALWv1PLV3hZiqm1nPejidbJ85KOAKBA==",
+                "delegation_confirm_sig": "Q76cT9/Lu188F6ZXCG187tres4pwKy09ULD9dkDkRDofBN1eFnFb/Lqy3CMjYPr0Yg8ckezhjLWcM1KRzc37CA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "jkGpzx/SwO04+ELXO6mEO+TO+voroY7j7nL0WrISAO+31g3GNsoCJBqMTfLTB/BwSiaEJBfy7qdKUP2BJcJjCw=="
+            },
+            {
+                "license_id": "0db5c7d6-3703-4910-9acd-40af3b20a055",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "It0/d/jtWdNttJSSEbOEJXEW7KcQZhGIs7pGowbYfoovZEADDkJCAfwh3SXkqJHY+U3FVI9hU3mxDisL/in7Cg==",
+                "delegation_confirm_sig": "5u8td7YdsuFMzPHoyBNaKgMrHr/J8oyx7aKQ1zjFEN0+cWhJGS7m9x3Ym5hJejioIvALJd0uf3LZQXZHrXLBBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "14jUgjI/frTmxTGH63rHMAHfwkoiYn+QrRW8OB0SiCpcznSdwhyy5DgKIJGZQm1c0zoOmj58141UWQ11em1MBQ=="
+            },
+            {
+                "license_id": "0dd3538a-f61f-4580-8aeb-7454f78fb9ae",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "nlyd4B51ert+kH8OCZYfTa1x3fTiEc7gqYxukL1kmF6bXCegHDwAanMW4ScCD133EAjzLulOJkLm2Cp3FQ6kBQ==",
+                "delegation_confirm_sig": "8HwMibP34KTHRCySRTNV6ME2NQcJ38vQQGMfCN6XRRdzXTSONgnWVgrEzW38M+OUpGi8qyCkfwKXtsPKUMMxAQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "VnvF3/R1MINafzYnGfTRZsD7bXaMsZlcat7KUmLV9WrCQD+8S8wgijkf+FN8w8wxhTrOaWcdABDRlFngI7xKBw=="
+            },
+            {
+                "license_id": "0e7fbe32-8c65-42cb-bd82-36e74732d410",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "KQlmyzV6oUdhoV7psp2mqxDR2USD7y0JGt+N9ZU+POMz3vbO5vUDI60vnxLqK925iSoOYxrneTMLWnTmOl2gCA==",
+                "delegation_confirm_sig": "Ipv7Gevgkf4COZoMkwbXmG94tpu4ZBchZ9TL6hgje9uc7Wjz9+RASzlWU/n9Bw0piEXVpkfSNnNUcHJ0rl6NDw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Xc+u+5uax36Vlu/12TlhUk1HW1xuI8xzAlfbMPU9EOc+zdwUr1/jfgnrUsisMPQLu5v2NbvDq7X1scVV/ByOAw=="
+            },
+            {
+                "license_id": "0fc92efd-4918-41b0-96bc-2a9722ca65d9",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "sHpT9/Omsm3Vxk7krCt6q21T+uwX7T42EnyJYU4Al0zquwNk+rdaBIDcKJefcxy1/2wCAbp3aoUJsg4XPATzBQ==",
+                "delegation_confirm_sig": "W8rgbcxEb/LPezHse/itSZVDnj0S83XfbNa92vjGgAl56N4lRYIXnSZLZtr4lpZYKE7DR6og2ZJgKoCbKtO7Dg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "0LpOfl2wuhFTkfkDLbCLjX6V0I4FIGopFbGtrEoHQ1QuZi3ym6B8O1+O1omRdg2Rts2w+qWo+ayU7EdY7gC9AA=="
+            },
+            {
+                "license_id": "0ff09326-39a7-4d69-9e0a-1e45a7b8cc8c",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "bLhFwImH9GrR0xRzjCDdm19yjBvrTjMqXWF4VzbGU6R9Rl639SL+7kzT/0t9Rh4hGO72QfovjPKBUrOvcY1qAA==",
+                "delegation_confirm_sig": "88+q/nPSyo+Oj9X/hU7UBQwwYVEb6pWaW3H07UE33SBsPfQ1sU8zzIx0DwmkCZib/P8e5dbxH66BrTyGaV0UBw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "pa6+f2pO7Z7so/mxNwTR1MzhpUYk8jNHMKBDLgPx8fLW90t10f1Ym3By2NhNwne6xvN1FK41ZeaeTvNVA+GzCA=="
+            },
+            {
+                "license_id": "148d7b81-1a75-4bb7-bdd5-2578a52ea493",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "ENHNy7m5P5dwh+j/S/zbAMomvttCSy5sQl4x1C0DVmgnbdAowiNQjN/UlrDOt5Oq4/B8Prw5s3j5PJYPBA24AA==",
+                "delegation_confirm_sig": "uNSx1e+LuFInxfdnwCczRO6RRu7jMHbqXaZcrtRh0HYNS0wnsaYdPk/QCXA5/9dFqY+YfZHAHfDc+F/wF1liDQ==",
+                "timestamp": 1745936345,
+                "license_proof_sig": "jAaAdMN1psGqpr3NG+5846c7CalnvuiyyleeqiwTEznLYMi1gwLXfBmRgLaR0mm6A7jpiSwfPVOnrf4vaNaMCw=="
+            },
+            {
+                "license_id": "15a64db6-e60b-4327-ad68-e2fb4832637b",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "ZY2b70u10CR5YN+/GPHxQ8s+Oa3poO6fW881KnEnsGBT1o2u/sMNGNI2rbfIWXI5kblB+YBbkm4c6SdzM+MxDg==",
+                "delegation_confirm_sig": "vSO/Rb7narlM4xdgvBP9FG+HeVHFmI7/LgofE71xrPrBhepsLz+zGhxAPZpEURBbZmlQZC3rlRsRUsL1An9GAA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "gmVJH3RZ2khRE0EUwX5RHokwagv58W6BM69feym3/niDQgzD9Mc/dAlS8hfk/O7xI0+8OltoqVNVXOx9Ow0jBQ=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "06238e14f66d01e3b56544fc0c5b66d0673ef77361f2215bb4d24b091836a8fb",
+        "bls_key": "9296b18edf7ff46be8a39941b80e39660758a2018dd5ad2e5e59c2532f5151d26f31e04381ce6bddc521a0fe1a8a33d2",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "243c1119-7942-40eb-ab9e-2d227c11ed0c",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "rpRcqb4qqPRYRsy+yRb8cMq9Fn7uBmm5PG9dF054GP4wqGcT7d3jDvGqvSKBzVPIgqpVsB47JIAksPlpYLYiAA==",
+                "delegation_confirm_sig": "1uuQ4azcyGWfhISX8M47qZ1CJkf9j7IV5dR+WWMva2VFVM64zStKy0PR1oRNf84gh7TNSEF2Q5XWi5m6NjmCBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "xllX4oeopn0cpFGMJFTSSQ+LE1fFNHvIOSkCha96VVKNXe8wlgGrqQnkJShN4+YRRgrkbDVKbslhtNCXu9o7DQ=="
+            },
+            {
+                "license_id": "2660657a-afc1-47c4-bb23-e188b4afae38",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "i47f2pDmaDktn9/VlvUjwVka6ikCeZH5hJctQadi6BaAZxTCmhSzf3aEkMfkYO0Edx+FddhC4djJa304gErHCA==",
+                "delegation_confirm_sig": "njEWMNQzbDNLURHrfl8hnlK0raqT8qwSMIp9wJsNnOKQbGVQK1zxU1Pb3KRMZbCsTYwStmoKPzSrYGAoeS1PBA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "OUVZJWYfpnacj2YlSmq26ENdO3YkXdxXuyNEpdahg7WdgHUt5WLdDf69btWce2qnVjqpfaZjqOPOrKc1AKc+BQ=="
+            },
+            {
+                "license_id": "28df277d-e051-40e0-8e47-94ea1a03fba6",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "RPWcxob+8wZPrmvZgNDSJTUt2x/QmAVIrKxsaLEi+g3/X0vJJ+qyiG0lgfxUJmeTbwoT62scZyBJOxfq29rbDQ==",
+                "delegation_confirm_sig": "rU5YbKRo5RgysWbwwy5LbZPEtkRETGDn3ydsdtwoeu7QIDTKE5go5+cNZpqdGZyRsrCNwZR8mshlM8l/0uC8BQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "3tuJ2n6rVY8exhToWUN1Hz+lwRVU79A31Ttk6ujag7IzFqzWHYk2TTBTpH//tUwHgXVULt/CsTTjmA0/4nk3CA=="
+            },
+            {
+                "license_id": "28f62b2b-f84d-4ea1-ac2d-fdb7ada4fd44",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "TIgyD5x90NuYSWQ3UVRLuIoGu6P9it5s0n42ylnAEpVEFVyGstAmoIwrUYGKaC7WJfyXBWEynfg4w/I1Pb8yBg==",
+                "delegation_confirm_sig": "GlydhYkX8GUV68rY3e+Hd8sDeYd0qtERhx7SZAQSQuxVw8ZztUnXj+ksURqDF7n7yCYlFi5T/U7OIHEaTaOyCw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "pfXzVyFq3vkblO/ZtdBNIs2S6ChEegpD2YjWOSm6QHtJ1aaXGWIMMES5MURTficr+AOsPcOVp3NSySdaioFfCg=="
+            },
+            {
+                "license_id": "2a450269-4d28-41a8-900f-c42d73287b1d",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "BPdb3AGQrSaAdD1zuusYi4tMbwXtzhUp6DL4dHLI8RhhNQTfflld7TpmOCGWIhsbmOEK6KL0pto6/DvyENj5Bg==",
+                "delegation_confirm_sig": "dm/KAi15reOefJ6oMdmBPIHIamhczVwU37t0qYynF9UPoDdwKHt9yTH57waeA3bd2Ddb8JptmpUqRxaRawJODA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "rVHYLQjP1vUkpRp4ppGbteJKuVzL5Oo5+DEUM+cTearMbz8xJFEIaGfO6/hiCAJmEt/FGuTxGMcRhPyfzgUACQ=="
+            },
+            {
+                "license_id": "2b243e63-4ff7-493b-8718-e6b20810d1a6",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "xm2cuaeb4V9AcP7DZ7i4yIHKpQDH+FHZdV2P/KDKCfNqbhHZrk0Z/KJsdrDaiW9OO6FfHWtZnK3RKTpCgL9KAg==",
+                "delegation_confirm_sig": "dx5ATjSWLv1dNZh3XHh8qjX1lZ+jY+ZX1G3KXSd73JHoMNtR4peYR5Bnp4dX81VQnFHHIh2IUwRhh0LddjYqDw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "suJ6/DVINh2TewHdcpPBS3ymFmagJi6RTi4oQunOAyhF7rFT4Ng2/BfjBMZcKrEoOjhJoyuado/i7irSwDpiAw=="
+            },
+            {
+                "license_id": "2b763812-2a30-4309-9550-7fb4610ba4b3",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "I+PAQMxgRDp56E//wjI4poOT8kBeeaYXQUw1uz686H6xXZBYAbfsyVfULIaGnMRLjBhI7zwfHVO8jOORKHvgCQ==",
+                "delegation_confirm_sig": "jBs9M2cYFcGbN/zANqZq1bzLgyoR0wJJJ76zbMQKiGfxJtht7Yt9TNuBLUwKkFqDuUJqDSwVkj7XGvHqNiNvBA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "YaxLTRpJgoCMiHT/k44wms9NmQhdZFQUA8X4y7aVhq+QGjmvnNrtWg5fEKDdBaDQb/luUKLivTpVNgQKrTbGBg=="
+            },
+            {
+                "license_id": "2cd07481-c601-430c-8c93-98f595ed2986",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "cltMJNZpS0+QX3D1Rf2wuIIWDdHq94QlqLJf9+V26yrU7ilUDRYj2tLGagAI0Ug4Up31FMGjuDc/Vfl5+JuYBg==",
+                "delegation_confirm_sig": "mQ8jkWzxJdHNHfBIIGkTTFViDwgGmlG3FcrLolIVTCLUti9xdM/YOnx0z+w5Iswfk7aNs2Of/D0VIcktinjGBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "mCNQBVLJdCNnLZpOvepHcAlL+cfEocnMPC/EZR9nX0sdIQb5H5zHIJdooaVhNS0k48YtrJys6xY1ZcxFfpWNCQ=="
+            },
+            {
+                "license_id": "2ded13ac-515a-47fd-9f6d-25aadbd68091",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "zETN5YU41nIE1gQu+sX8n1ibBQHurJfQrmMjfXPJKYVfyUkXfBal7crl8lA0J456OtXU3R0PBp0F3WizG0SwAg==",
+                "delegation_confirm_sig": "hinuT0asgDnSpV1wyri8zuNK1ho6JoF8mXiggJJHUef++d6bbinSsNP/RCoDcr/0oDap1+r2QyaLx0TsKGfKBQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "sqYnRJDq0E6vEiIxO9BiHBsWLsbcolqiKqlWW16G6IWrUfCr8JVKQuLb4N02T1SDAed/Des5Dh8Bg+m0hDFZDA=="
+            },
+            {
+                "license_id": "32a684e6-b685-4d7f-9857-a58a1b4e9106",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "OqvdVCNozECOeAuQhZbQ2+B4pxooLtdG8bnSQJnFHWm9KlLIZLXnbwf60n8C//+T1PMhBrbFK4voqDXrPdErAQ==",
+                "delegation_confirm_sig": "U4puWbBgyT3rlgY9WtaTxmfGfOowUsO2+MV9ANEUcLZGaCgPfQwaY1Kp0wzxl2w4IvNV90NKifHG9GIB8H88Cg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "DYgjJLNGnv3zWHwJRDEt+osRBwBwllmI3uHyIrn9rQGhQ3eKgNm5gzTOUn+31/ZU0pensLj71k/jHLeUbxRxDQ=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "5387ca9cfb42c6a0d80e9aed4dda4436d3cb0e19e84f79304e36b1380a7e9fc8",
+        "bls_key": "8deee152e6fd6ba2523e9e71ca17e7cb95a7c4b0f6ff7222fa869f25ac2551b35ee6d1643d1b706bb3ec59a1567463be",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "338265d9-4f2e-4102-9213-10e5d0d084d4",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "Xa88ca/JfYEoEktYghVy+Fojch+Y8tCTkbJwXyszw0BHhB9BiGovaCk2IP9mxCfwdjyiLkHwaz6vv1q1xX6nCA==",
+                "delegation_confirm_sig": "gz5v92ttXwULG8YBKJzPrDZoBNb5Izk13zszb3kYBGDBeZnTiVs6kFJG5NXgufu8eI1/KWDZkU42igagzZfeCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "BbAeKqzDjtzvbghS443+ZhUWXZODqtt8DGXHcWlxFpLGsL05SPMgfIsLqGuOLrt+a2baoDu4E/9eY4Uv9Zd5DQ=="
+            },
+            {
+                "license_id": "3b3ade69-3fa9-4808-a088-ac4c67243eaf",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "grfvhcDk4I54Nd7dDbpZ3+1iW3SsmwaXLnwl217atddTK+OnUmgJngItwVLRNH330ZvhVIvQDMRC3xhKNrdTDw==",
+                "delegation_confirm_sig": "w7Ip8EtN5a+8UbPKzsbOfO/tV/tR9vklJtlaZXwjZw5vj9KvlclcEhG1Y64mdVckqe1PCfADqlccLLOiBBJ9DQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "3wzAJKzhMiO/M/ma+e1XIww7mQo0Ijsp7DYbB6HqTiG8shAPIS/AbuuiuZAMKLxcRmi930AFR117kWpI0ruKBQ=="
+            },
+            {
+                "license_id": "3ca7f1a8-41cb-4ef4-8f5b-d127c1247734",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "4WJYKt6EWSkuGboUCg4Np7pts9hsKUBIN/DDEOwAEvhv3NGNnjQVI+w+HYuZuYNcbbNM+YNfLtdce89NdmyCBg==",
+                "delegation_confirm_sig": "AnLwHp8aUCNc247lNA7CrShg1rsgm/dc3SWrgGwxnty0c8YyTlfpkcdyN2tLi6wb7NjkDcUZiG19EfPo8F0rDA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "JKu4OCt3EMXjS4ZFYhvMBzmuwG0qA7zGbPiko6Sx4O1bkvtHNYLqI9omi5pAW1pZ6WlAvhR9WHkY5sGQKkhmAg=="
+            },
+            {
+                "license_id": "4059a434-2ff8-4d5d-a127-9243c2915a2b",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "Cxb8L5gPyYDNXDnW6jMbTYNlBXGrRUQoTr435OdDAKV2pm9L7VLnV7jF27g4pVCZODDbD7r3Xrd4l149SM3gAw==",
+                "delegation_confirm_sig": "TRR69IERwDjhdGhg+ma93Hb+Fr9sgT588gky295EqxNeZQkBRK/R6SGwlTtr6oLrA3tttFGvhcgXh4pN2VcZCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "v6YH55bZeIL+FcWr7qehRJDT40fd/hAteQ7xFSaYlw6VFdsbdtwgGg9uH3tVzAQ1wb2IgmdDg7/UzL4SYc3WBg=="
+            },
+            {
+                "license_id": "40eb9c96-7d69-48f6-8671-bd42e09ea85c",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "HmK4gwHqT6zyX+PklBjnQ3G2FZCnIZX2OnqRgVLAf1J+/pVadf18pku3g5TPt8GNJFu2g0RUcPtqNWy/2a2XCw==",
+                "delegation_confirm_sig": "dTMxWnew7PT3nVa640TTzupHVN2AAepsv6d6ZQSqdoNP9njCoUbdSU7NHgSrOoh5uO3oVt9EbJZVQqsJZw8bDg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "YoGtL9/AE/rDNEETon2OElew9Z3RQXA3j1+rX1/lllg7/MeHioU3TYAA/1d3619+mSzVdAGuHeKoM+VPA5IqAQ=="
+            },
+            {
+                "license_id": "42c69be4-64c0-46e5-8b1a-092f4504e369",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "eG9DBCtx7thHhhnGgq2rXaDIH2lVPzz+QU+KTVKT94zsdOpXq+TR0Tuse7DHPpIeN8ytQ6kR2vqM3Mzgu6ZsBA==",
+                "delegation_confirm_sig": "IESjolWK41/MY/p2T4grvtyXZCfy/HcMlM8dmq5/VPZrQIc/Vz+xukAB0WU2GxM6UlHXdd5L2toopqVhTxqfCw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "WWLSQaDtxPwiLv0m5uuz4UJ8qwRq1zhtL2jgvGlPDhDr7d2PfD52aX/qmVOcOrGXnqfxh9Yga9C0pV7WsHwTDA=="
+            },
+            {
+                "license_id": "42d22a66-d459-4db3-bd1c-94e8f20f0f52",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "5QsBNeGjBSW/CNShUgiK0RhnznYIzL+3bDtPR0lbm8FjUhnLb8k5AIPrsauVygJbw/x8NJUobIBx+q2ZiG2dDg==",
+                "delegation_confirm_sig": "Jdd+FjgvGAJ+DWHOTx64DjtDKdD6FKlv3b9qg8Mqq/zhgxwHraMw4rjDzUGZP+O7xB5QoURfAepluSH8+ZmZCw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "To92MQagVkpsy0vFZxvuxNv5hULiv9ohNCn1Ia5Pwa62Jcp29YkvYFyGQmJIFWZs2mC/VpcljgQpR+i/g6yfAw=="
+            },
+            {
+                "license_id": "44bce207-8c65-4a87-8a09-bd1d0e9fb66c",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "k2k5zA+XUu67ptbeboUEZA9iUcgMyUXYLeZniLlO8M6m4FlvyCIYQBf1crfeTWXb0DtFbHdUDyISexONatZtAg==",
+                "delegation_confirm_sig": "FKoKV0mbFvPV96QdIJY+qWsJGRzuOUwMCmxyTRtxasHTB0AlHWcUmF/6v3UUodJKrvRjEue2CPXqh9mhF33rDg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "FX1vKg5yFxOuW2gsKGkLJkaI57qkX6LNGaj8v21XT4/Z+sKPosqQfxR4rnULp9n1hB92oELjTg7s6J8cTzFVAg=="
+            },
+            {
+                "license_id": "46c95b28-956b-4e40-b2bd-5c94c41a61a3",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "YGJhGiuQ9OJxa1OtU9ehoghhF9KkW+zwdSGT9s4SnBDIbQKR3u4DBMWvXofcoK7AMjzz8tq/XBcDhTEYLu44Aw==",
+                "delegation_confirm_sig": "QpHCsNjnsf/kYsmi8J5IK1m0tUyfBWOXCvaRvIAQk9s+mm/xCm4pNXGhxmPkltfwqxhtK0NBsextbYKfckmzAw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "kBRUXjp+w376yu7uwwxKj3xbE2Jh8E/DxAviCCu4ZDDOxINDlSVBZr1Q067D1P9tZEmoMyTKWCQDP5v+cTc9AA=="
+            },
+            {
+                "license_id": "46e05f98-f4fc-4f39-9497-2b7ea7baa258",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "6okZ7udHDYzLbe7bPunpB9eCE9zGCTrvMiX9hU26ET2eT75vp8uCAAXNHDvJwuxsQTODv8d9zuq3EYeUa6PdDg==",
+                "delegation_confirm_sig": "GagwpNuLFunLFiQ23LHmlwhkcDR+wdsYGWMrZQVhCyx1r8PRtwwKbj3qjt4upJDORuH8a1a3rkMrU4gHMERJBw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Rhda5cNVu3+EKN9gpJqbJk7xfDRg5GOCx0SgT7yE4jtNs2ijh1q9XwctguA4PHMuzy+3HDdJTA2qQKpmyIrbAQ=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "5e3e1ecc6db936bbfff1756f2e9b673e1e942e444840ca7df1b210053b890dd9",
+        "bls_key": "a17f71fd5fe4936be5fcd6b41545feeb3d01e197e471fe78f02e75832bd35993bd5dac5f3501393865527db272070009",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "479125d5-fbd0-4425-a554-d5e1c344881f",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "3auj8P5RsyFFqoKCID6MoMDHRCDECNEvhEZ2foFbaMxKmvdCBFjNmlJ9tXa+0vKA1W1zzZouv1FSSK1evoAoBg==",
+                "delegation_confirm_sig": "xEN7ucy2xCviEYpSE+lz8zLk0slh+plBfPRQaHlYsDrhaHJzHOqQewgdmi0/eMfUMXNRvgFRK7QZyynwFWM6Cg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "+eTxUS0zDOEiFEQdFHB8tcraYInGXMoAydnRV7UDfCf727/AyfoBnIeAlRlf2ngghjTCzvOuIeOi6137p8MhDw=="
+            },
+            {
+                "license_id": "4d32ed7a-f53f-4964-b38d-066504b9b994",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "aPPAKfHRMgORbFlUazIMC/ViKSJszJyTfkJTAWqd/lsMNRIoPoDF+yb0pHmC6swy3ZyN4u/Nc2PiawCmVkKYAw==",
+                "delegation_confirm_sig": "lHGkXPM2Tf23FxOXOjfIuTy+FWBhxWSybbPIDorlkgVrTzCVmJ3IRGfL0kDew2eJyr+qK5z4zED3DH3eB2HgCg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "LztNr3KUk+7rNFoVynnIzKouP9n3qmXBOagTFZJqnW1ja14U79ZbumQ+bUM2Ip+doGkQL3sKQOLbn7O2NiNwAg=="
+            },
+            {
+                "license_id": "565bc0a2-1a55-4ff3-a52f-1849909a1d69",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "S1KZVrNBi6Tr8zVfdryefucQ6AKQwnC1LFLUahHTmmV4LHG86YTW79/ATsZkt710bh3SXTUk7iYJE3btFnQvAA==",
+                "delegation_confirm_sig": "ReMWfuHU3N4i0P63SaIGvDhO6ID+LdY227G2nYaLUZgHred2nwj8+X5SMVdA2anMJDLrYhGq20HQ8npht3NTCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Hjn7En7GzhvOR41O/bcF2ac1rAaCQvBk7CC03FDI6gdZFI19uPsK+6JxSlVQaQ/OXNHI/JzyKd2Z4kCdDwVSCA=="
+            },
+            {
+                "license_id": "56bd92f5-b64b-4348-8627-7557c2f0f310",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "6DVQO4AY/kjINq9sCeD06FMcmdUHr056i8yMjxxjztIgiBZ4U3vTPus2yITFzTYOE7wPdvLWnRuL4PMUuEc0CQ==",
+                "delegation_confirm_sig": "U9ZhuPcGSznt4xkeynCLyfcUIAJgaBhLi0hWa6UCB76j8lxburFO5kYXZ15clNla+Vi93W0fx0/lQf5mVU+tAw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Z6q8sw61BB/PTu1wH15a9yAPJdFk9EPCXxmBn5IivfZqNEn1v4nwoxc+PlDPgHSwGTziLjHE8UK/gZwg3vBRCw=="
+            },
+            {
+                "license_id": "58217617-fe35-4a1e-9184-24c6fe6b6adc",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "X6gub0hHqSpYDvvdp6HX6pS1YYCT+reIQ/X0my7NVkHWJzRTv9HFcwJviRrcmr2QOb3DqcNzI1wLFFd2fNBRCQ==",
+                "delegation_confirm_sig": "iXHnW3dA2K6hFax6hee5VJYAZqqcKIiasvyL4dEBJUwexaTbj/doBoqnN37Poc/soHXZvzj25GErodTtF92eCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "xs50Utp1euwJhOPzUeSvlNtvsb3ANS4yFoRiZaTOJKeqqMd+sMKDFkYCkm1/h/R42bfqB9WIzNckemV+O4/IDg=="
+            },
+            {
+                "license_id": "5e18c3fa-2095-415b-972c-7de58263477f",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "LpEGtPjxr4ZqWBH9XIH00xCkTOB9liPS5vju4LtYAD7on4Q+3drC14Elx6I5DWrbLBvaU6eX5O/GlLZaB+YnAg==",
+                "delegation_confirm_sig": "7iMfHvFBxcGT+fxDynmBmUpEqTSezEEWfd/9U4NiE8JpQvdUM/5Bx5beuPlj0qd5nY8tw5eGz/ytMwncBbmpAA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "IK7dcK5tT9HH7WfLtXUTQstIBQpQILdVWVJy2Uo6t0WjnFAfAyDaNjiDpPkSNGg34idqtmESZawJbeOQtRq4AQ=="
+            },
+            {
+                "license_id": "61a2c43e-0348-4483-a716-bea6b1c106c8",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "gpVzv37tbF6PQqSvf4w3CUKmmOLzEc2ze3cz858IdVbOehGh0lJEdu5jPFHtUOCOyZzMjJxvI45r7LPDDtDRBg==",
+                "delegation_confirm_sig": "jjNdzERFGEYpmtURA6SB9YBhKKNXyFeUA5Isic4QCuavDkS9ecSxdE+hiK7WUCdrRUG7DSmC1HvAuk/2lavoDg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "t3Q0Ypq/4zP7c1XFBuQt433gwRR9I+VRgJwq9JidQJUJBVeFVphpI5HA/3627haFoLqjrTwQqLv22KFF/dA6Ag=="
+            },
+            {
+                "license_id": "6699d6c7-ff43-4c76-ad5e-de47599808b0",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "CmaDHZbfV5JET/vWjWz/8LiZenZ4mfCYqtpzmanD7YDkapa1UejM1uonspKz1ElrnlZod4HiIyde1tuuAxC3CA==",
+                "delegation_confirm_sig": "GLXs9F8E9+aVVhhXXELz44ehT/XpayzSF6bnsBEvi3EWt1QnC5PvNQFs2GKY97kAOUWcE8BxUDk8cTx2w8vJBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "J1byJW137vKxEkLEEiuKBkYc6+fTO8WFxUU1LItwBEA81HyXsYJ4R4XvGgH4c6NeTvGXiqzoOnzxIHavv3QvCg=="
+            },
+            {
+                "license_id": "6754a120-a7fc-41cc-ad40-dca13f1a3509",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "ZkAQ9WsQB2UtjVUKXNR8mvAeDNzoHkWe1icsXwRDG/UG/BT1R9C5MakO5IhURemDw4yoetz6QRw23m/AmAG6Bg==",
+                "delegation_confirm_sig": "T5ZGzHJHs4HpjBW+7MyRFZ06duxWmB42PtIV189FlXouADhWbeEABdP+nIOSmq8th6gply3cWXUMhWCHc4wMAQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "IaqpLLp+ZIZtODijTqw8jq0AW22enCWNpx3h2X7PI62PzqynWNaenz8gy761vD5dbUJnSu44BMuw8/9qrmc1BA=="
+            },
+            {
+                "license_id": "6c73c4a6-b3e3-4726-8532-91e0b5d21787",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "6n3rVsQW8MEQnks4Y2l0ouUOijQtAbpu2nr2jMe06Qk+hlqUwSsuoxZxjsg1e+hBXfi+UVm8AbADiJXuNv0kCg==",
+                "delegation_confirm_sig": "795SYabfEqplBKme+avFQ7xhQWnZJFUVVcXeCyI6gL1vHKAZ77dVo2o7Zc7roA9mM1TS4cJCikmIppMis+RzCQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "KPFngxnJ3HjFZjJwrI44us5+rjl6M0RFnyiPQ4J5H5TXzSlrN6Hjn4ZzqwabPv2Ds+fyIuZVMAxEDsM9shCGDg=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "f535623c0dac1438e3d1af382135de6e9c784c3597d078115a0e2d0021881939",
+        "bls_key": "b6a7fa8d644c65121af6b5a9a5f78b038ddb6f37f0b71845567e373c14d288124d70a8d03f35b659cfdaea5cfa570026",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "6cabc631-1402-4a74-9559-bd7d74a7c2b8",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "aWjaUFkO/IK+2UTjYCBtqDk8HqG3DdT57B3jdQiyuHHBhE/HWtJaLNvVHBvv12vaf6Jf89a9RLfg3tfATmJqDg==",
+                "delegation_confirm_sig": "/lQiLEtogU3OxyOYJmjXo5HJ9cgf9a5rnsJI3TNcLTBpwMMK+Vd6QT3bllwBkkcglqsdsx43nJ13ysKn/Q5NBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "AooLnIZisW/3AEcbRyVl++/53ERYeHWjVtJ4J17N//xK3iQ5v/QPBKfkoTH3xtaHRNoxnn9OthhLDM4+eJaDBQ=="
+            },
+            {
+                "license_id": "72ef44bf-ca8a-4a75-a2f8-b55746f1b8b3",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "POOl2+n71gU5QyyX9DWbpD8oeYlLlVYzQ0XJSj98bQ8fhZdDYyOP9BqI5V+73QoqfLce8T0s+UZJYRbn85tACQ==",
+                "delegation_confirm_sig": "Z/BGl7wAYuOWggvL5eu3SVNz0cEISHXr5KUZWA/TywY07iaQKwZeAJlj0YEaZb6B2E7WJd+V2I68ab94ETGdBA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "hAja8gQPFQ5ZvY6rHUE1jU+ZFhrZyiWcaHk9lN0LqoZddVzx/+TAQyLan+bWt14ma0OcGzHifbDCRAtCF/ZVCw=="
+            },
+            {
+                "license_id": "730ff86c-218e-435a-a8dc-455dacf8c1b1",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "lQK21Z39B5rdAdYTuFQ92kRCPGbaSXdM22vu3/hq8Vg9vAY3lr9k4aKY7apsNIO0yRhiPQwf+G3mq/13aaopCA==",
+                "delegation_confirm_sig": "+UWZHOPViIdEuBA9Z2BFPpbIlFq4rE/LyLpXFTesI90hJFcpIaQVePA84ubjpCzNkxxB5X4QYaMYurLylkgGCg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "58bbnrGBOickzTEL8t38wG3lPqDzZMxgTbLdPqBPvK3YuS8iyQj9ol08Oq/eRqVXiaNGdflIgUlQDrpt1x5DDA=="
+            },
+            {
+                "license_id": "7384c80d-f7a7-4a82-a47c-4dcee36a00a2",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "R4ShccMKBPurK5iq0iYMmrUuxzARk/quK7IJL9E5HdGanmuL1m8kz9eOt6r1q3dwfsSnpb1ksiNXRd/BW6kzBw==",
+                "delegation_confirm_sig": "drkPRuvjR27tW6ispqSFX3+swCBdfjyt6x6p1Pe4OiLDHFMSE8GgxDkWbtpxtpwu+mh3jKG2JD5e0hW4ptPcDA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "aL5JHRHgSjhbKNn2S09vL+BgTw+fui1AcjO1xhvc/h9ZCoVNRdck8K8WPBYjYbTbFxupfRs4fI275U0I1XfqCw=="
+            },
+            {
+                "license_id": "73a480c5-bbe8-4dcb-9fb7-9b33bdf9424d",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "H9xkcTdBX5Gd/Ke9VeOz9PeYgSfimN2p9guZ14lLtmrazZZ5/D2MtHBOjvEcWfh5mvydJnxYzF/SPajGVvfDBw==",
+                "delegation_confirm_sig": "VdaCpUJAqCmXIe2SQ+U0RQWILvfzIS3KLt9y053ltne9jVeAqadZ1I4xGNmIDMGX9jlBx+SeWMt4R+R41x9MAQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "K3Z7EdZvtLpt0n7XAjo49L/5590ug7F0BqpnTaMVgcySVpkRpgeJv7R6b0sezdBut3YYuESUfIDckZ/89gqgAQ=="
+            },
+            {
+                "license_id": "78e89657-9726-424c-84cf-15e190e4168a",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "K7K2NtbGsqaRF5iO13hbjVpM0pivwVyquLwy8LhGrMMFwwK6NWZvomXLFN5tEE/BnFSn0pdjp4J7RFw0HiYIDg==",
+                "delegation_confirm_sig": "T4tN+4DcBVwodXclh6jVF1OpWhBTpuTECgYoF2lNt+I3EL43WwvftfEMM9tLAwU0qY9e8g60ZRloI2O/l1WPAQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "PpHH7B+HIUIk00k0X/q2KSvLMshGTubcV8eXnbyhl2IzNcY4XUg2ALHUehSInm24EiwKNJNi4iSQ7i56EOqcCw=="
+            },
+            {
+                "license_id": "79717344-5812-4660-92a0-4a298f56ee5f",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "LsXvqv52B9zhlWO6f8J4NN6iFtVK6GhkW3QL8gcP8ZD32tkuuPI9i5irBWGE8Bf5s2GEeObh5ye8Ao89XWr8Dg==",
+                "delegation_confirm_sig": "MF2RciKko3O5CeB06eURm8inFbGgaI4AyqlPfuyQvpu1dTcABkCED/uahAVa3Oj/zXtzpIOgSMhXQ5PLjLIyBA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "6W4a71lhCiNtsiyaUs+N6GcXGZcNUdDMQwHM3Lrd9N5cFeRsYagiK+yf/FEw6mC2eLNofFnAReBKAiDEnDCbAg=="
+            },
+            {
+                "license_id": "7e621b00-ce56-4bad-9b53-81a6bf5e7a68",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "e32fbx9zrhLiVBtRkllWJKVEnU7XFkwq1RX8+FUr2q6ZyRTBLa+9MfnROTT2e14hOVVd+YIEz8vbiisXjA1jBg==",
+                "delegation_confirm_sig": "Z2VcKfn+RDKs7C1WxRI6nV9/f85hajKgKqisjnIsvquwL8MG/XWRzMTORgxkl5+ZoXLGtwhQm8p2D1HBqIhuBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Xu6m5JqdYw7o9ZeyfBMQdArDSqZytUVhKh1saaHSyoz4+FJ9sSti2yNGUboeL2iuuR8CRI+8/32TVz9JDuRiAg=="
+            },
+            {
+                "license_id": "8064e704-8c59-448f-8f02-55d50f383c1f",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "NqNHbsliwuMm3T2R88bjk8OO52JJ4Nc4q8qYNgkpOaHVbLvIx1vmJVhFt2nrq2ISZfAiuSKnQagkDeV20m8FBQ==",
+                "delegation_confirm_sig": "Z24nH7AJCFLnm97SdaulJ6p4ECUoz2zaHIAb5q4n4dDu+Ko7t1PfFTkezteMSbztbZGVUOotEf/gfNbj29lGCg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "aTDwiFYM3kTXR+dF5XdWacB2BCk7VTcOjEUSiJ5a8i9p8IDirC8b4I7PskkgS3b3fcyGFq2uX+YAQxduucJ1Dw=="
+            },
+            {
+                "license_id": "82638b32-ccd8-466a-97e6-b2065aedfe69",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "xt6e3RBDaccrsmNk12m3myTrlIY8SkyJc/AZHt4PHS4T3QikWH0JdMx648IMIf6VfNE11O47xzGTOUjkBKhWAg==",
+                "delegation_confirm_sig": "EM0Zfj2KTZ+xw7Meb3Jcw/zyLO0G1ObKPrLa6DCYDdgz6+Fr0ntt8f0rO6+OMfTbmB4ZAHVbpIDhEc3ScoutDA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "RbE3QUqCKMbkJ25oFwrmgduVnqXHhNnB6Q/1o13baCithm5Zu0QUCef3Ur1Of67O8KOwDoZR6DrPhwvB2EvtDA=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "37361f4d3610930725544b4698d39ab7d088667edd24ab2de62ab18fd4d0e041",
+        "bls_key": "af151b9fbb9f2acf543103639976becd6c1a624dac13ff9c9bb377bbb8f966df0255fc458d13846dfab0678ff4903ba1",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "87a37ed0-3a4e-4fb7-9f6f-e7b1fa76dd28",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "ZwOYMRhYA/fjwGb6ztWJZGl8NHmDof3ucIrbXyU7b54b6uPZQm1V9vo62yDgJNu/YZwIvae+ztMkEo73HDp3DA==",
+                "delegation_confirm_sig": "M9YrLNNM5pr9X2cqH9fuXAAbdG429l2yIajUDirda/ZyG7nEaKpd+wS2CC77vZqkIw1NOvCNTY5GLwD8p/bPBw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "hS4rYDCxpwMPcQuFBkAGc+JItFJlUl6ljuCDYhZoYq5CmkLQvIxCgIS9cNxoPat0okwk7uY/awI/6txqsAMYDw=="
+            },
+            {
+                "license_id": "938e31e7-f207-44cd-8c09-f8ba26fcac81",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "/x6kcuzPo3EBlIdWrfNbodbMnK9F7VDWpuIpB5RH4HCrwBYhhKwgedKo1qILjXYOzJZgO0qkvSiXWf3fRDa+DQ==",
+                "delegation_confirm_sig": "3CFWt7LwBAhk4z4ycOBpVZrLxLQcMf1Udj3zAbvv9gH1hIwgZUaLT1Q3z56M/3fl9YE6IyFN3p/X6Pe7NPaZDg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Kh/d6GpAvY8kwniQgC07EY8ec2JatO4o0yV+4/saIPvGTwxY+pstg+DJ/Mx7DKpwnmSFF3at0PZsjQvmFdOYBA=="
+            },
+            {
+                "license_id": "9733698f-3dde-471b-8776-ef76fbcefb36",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "Sy9+m6nvbZGUgAs4vkCFO1XyQY7X/Lpb9xQzZvmxNIJ24GnR/iK1PC/VUlSu1mBFJLPa7RFrSzIrZBYP6xn6Ag==",
+                "delegation_confirm_sig": "c2wVuZRHjUgwyCCBjipyqE6x95dqWolgzGcgzYahLWTmJdfiIidwxigKeSZmnYHYiPeAhkNha5HjfH6HlhblBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "b6lp+r+4Mbbb0gn7/2H6of56zqDMurcqYI0KKg+3dzxgKRIUNixie3/Prtha5Ny8zLu6pxw7B1XF8NvqYmGrAg=="
+            },
+            {
+                "license_id": "983c19e7-da87-4b6d-b180-e877bcf5a24a",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "YDW2BuW72eomDt8fkWiartcuV8Ei9nqMre7JuNDJdZMMwqDsq7kerGncfxmCC0pIcRsUIX5ogjIxfzkH8iL1Cw==",
+                "delegation_confirm_sig": "9hVvGoyhS84qSOfXn4LdzyFlQR+Ln27/LdteDnJgmCtnlaNO9pgkWoCPobOFOb1HxjXzcTG1D4EvnXywMmSfCg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Z00R5/sF7GtYN1TgrHot7hI42xg8NquF2QQXXDy5k+KoGOZayMEqpoXu0k4OJIlsmqKyltYjvwP9Ug5MyQKaCw=="
+            },
+            {
+                "license_id": "9afa3b62-f86b-423f-baa2-452bb3617de4",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "sjVzThHgleVeBWOVzKT1UNDRREJrAweBhlTe6/Y+mktqOjfVCtxIO2oPOPxRvfqJbTdKuCoc5Nxfio3iZgT8Dw==",
+                "delegation_confirm_sig": "1JhvZkP7Pq7Cejk/sgflx999CtVtKrrq/Y6vc+ia7jeul8ToZftzuuN5ERcVvLQS/KiAD0vBK0zbGArD0OT7Bg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "CoFw1O11EkbOWbL1oGgbBzJhlgNk+AdEZr1yIktPrbPUjfC8QxjVEBGMxRxUO1UdKgGsNnniUNQBIgmbjXNeBg=="
+            },
+            {
+                "license_id": "9b318d1d-6351-4cf5-a852-5759d3fdafc7",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "U/wxl94tG14QQdWjSrEPlqWC161dDBh3DKByFeNMZNSEN6SKritChh4Z0Qan8ozK3m1hwA/cG/Gs6KcePeGbBQ==",
+                "delegation_confirm_sig": "QSvYa7AVl5C64vN3KqZOS8/s+xUplqf9gE0b8uebg/UtUT0N+6CSgu8j4WJzMeJzEM5gbHcFQeUj4pGO6BWWCg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "tTJMVGvUm7NAFphmkpFI5kw/DT1+R/aHgnk6H87F0rqYQHuxYVT1mQSf//5R8OqkipsdbYNd9St67sgk4A+TCA=="
+            },
+            {
+                "license_id": "9ea6590d-f8de-45c6-b6cc-e19d686d3b3a",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "3PIQmSzkDsnW4tUX9VAVOEqDTo0RzTADDS7XM1yNcbnWnmgBVOCFlHLZbALaCi9Crn8K8Vn3Nszdka+NFwgzDQ==",
+                "delegation_confirm_sig": "2vyZz61ZlLe0LpOWLHsm/tq1RqfjkIAy4vD81X8UGywP8kdkxN0bXt2h3dKCo1OlONyhbqqXHbbkjTRqocXiDA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Q7ZL0yPiwivtjVA8I/bgGwk+OMNd9CJpq/j/o5NbhyO49CWecyWNW+RJJAzaNMIDa+MDleOgtvtqFw9FJWMBBg=="
+            },
+            {
+                "license_id": "a08de960-d555-4a64-91f5-6b1a0cf48f21",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "qfi3pTuO6FzLYuic7z/JnLP+S1kYQP+oMu+4yowKrSlHPIdXvdLX3yt2ZYi8c3GTs6koOcAz39E5UKSwK0yIDA==",
+                "delegation_confirm_sig": "a2WcoyvH7JxDHEN0ByA1r+0zi5wuNdhcXgD/IMvuDllAv5S0RoDufyau3HxMnx0e2IqnBbli+cd5Y12BEWkvBA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "8afeE9bp9Xv8kdwBkp9LuAV/M7CCUGceJAiiNDfVK2dylI+zw1ydSpOYfdbiLa/ATRz3wW/g3mdee3sFpQXnBw=="
+            },
+            {
+                "license_id": "a478430c-58f5-4f73-9d7a-9fbd7756346a",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "rJJbAQn5ETQumM5YgL/3HpEZYFtiq2Re9dcVtxel7tMMimAGZangn00nlCaUiId4RBldhTT3ItRo23A12BPZAg==",
+                "delegation_confirm_sig": "YmL+1WMBjR0OMhnrj/qnL3BJHF1drHfe2xgKikIuO2DwEw34SuSagmo5OXYXlKeCvszRtGeHQ6VdiK4amrvTBw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "m3Yijpwweoij8knxr5rS1LRdziNTWGvVC04uR4eYYDEnHxDPDxa5dpEfmPpGrIwNhYz3wGB17TThUXtlH3WpDw=="
+            },
+            {
+                "license_id": "a841a3e0-5435-4685-965d-b2a06a329d59",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "NNuPlXzcPpB6e+6lt8bEf2bn+KXBRWsht0SgrRJkpVlYSjG0xLFowiX+87jPqBeUonZFVuf6X7kSZUYBOzQYAQ==",
+                "delegation_confirm_sig": "/MHl10bcF9aoq915vHOeo6xwFmOvSCRk0pK1HayLGqnXqskEPxFZUcfuvXdib8UpORppitwDqtRUpuR0lbFuDg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "lH1AUOwSBrevweYnQNWe99cY43AH99UNFJkNbz4dDfwpXTQHqnCUiNmgpTJBzWj17zYXNArK808oRp9qYHJDCA=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "5dabcfe93a302db923863ee0c6f39640e08e63ec8f43422ebb85e99f293e8d1f",
+        "bls_key": "8d3034729102e5ff3161cdef2c51109b78416361d9e9a50863f26a1584cfabfdb420dc5b580dcbc31cc4a823b0d8561c",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "a8f3c234-b8be-4c11-837b-57732a6a0778",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "NXhyd5jH/WkTBcJUyHZME39yzLUbuRWNflgYk9cKR9jCYHx6Cv6o79m0C6QSrG6kmS35vhAR5sMM3w6zIuI+Bw==",
+                "delegation_confirm_sig": "mkhESGsa9K19V294uLIegjoQB3UrZoFStSnpPJR9BA8SNG0O1M7rjshcEBgf8EoglXgVohSIfJpwqPd12SGNCw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "Pso4eKFAMRnIRRiAoKY+qHeHhH9k+bJ9VIT4Xn7xT+8OslX1YLsGnRR85RlqVH4zLel/JEdLDcM4sOlpQeZHAQ=="
+            },
+            {
+                "license_id": "aa299f60-6035-4930-a6bd-04fe368cc48e",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "48/+Ch/m2d2B4EV1bUaV5EuDWxCh1zFxr/ygZZNiNf4bPjd40uv1BlTIkjAB3sXswUxAnRvCiDKQkKvkMIlHDg==",
+                "delegation_confirm_sig": "Gn8A1tAWRk4vNSMdfmOxzk5HGUJb5qsKJuWc+VNX+x2+mm3xWap60Sw/GK27evxXHpHxTFVvUKjRJY4PzdA7Bw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "FjM1r0lP2CiBYmUQMUx4Xlj9Jp6ugrlvLbeqJbBAqh/2dxAa0YoPdOXFjO1Ocg39/0YfQ4TTJDDuny7YjhinCg=="
+            },
+            {
+                "license_id": "acc3667c-b4dd-4e9c-a4eb-166ef76263d5",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "7Mx6WJ5eTVTfMMkkflIAkh76gYEWTNT23qUQzu2HdKnu69s4wbicWz8l63MKEbBT7pgBPAD1ptlEPdjJcuccDg==",
+                "delegation_confirm_sig": "OQEHnuGMMbpiIg03OPKozcFnA8tyRW8zKaUdZpCSo9hqvmSGqOk96XkEiiHE81Fsr8ZA/ivrcPLR59NJC4o3CQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "of5cnLDp2vho9JIaXl0FWm2cFd9uNekGRKHCfKsrWSuSv8Xpm1SDx7BuCGgRYl4G6mY8X0xoQEgDmsuH7wq/AA=="
+            },
+            {
+                "license_id": "ad3126b2-6172-44ce-a3aa-f3fd6d5c13f7",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "+JNzCspLzgbkd1YVeRJXJ5H1Q1ggS4COvtJqobkq2pT8T5YzgxCGBcKv2L6WBGf+0hYjVYWvCW9wo7Pz3YFaBQ==",
+                "delegation_confirm_sig": "D1JmqaF15GNVaCuYYVHwzJqEoRLzTpEhac2i4EdxUztFz4Y7vMdY/XSyEJW8MMe8C/WckQ7VtSloIVjDcyvoCQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "SBCXrjeZkX4yN5jeTQ3XllFsxAU9yhUm0wgnOlZ1VN5znaOoTZBSu1VeMZZtzqi6uAyudniS2EgDvMnC11jkAg=="
+            },
+            {
+                "license_id": "af3c05ab-4858-4056-b03e-4a772d360a30",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "6Papfofd6v6qugkKtlbW+Y2SaR6r7dGvNchgGYr0Hu8V7PUtbUJyLY9b9b5Hgdz9YXUfGRFJFGFJM9tey80XBA==",
+                "delegation_confirm_sig": "h5BmqyKnJ+/LxP6m5YcKwYJHMQxrLi8R87TBLHnlKKlkbEF8j/FsvQ2A6tTfmjqI3iuRpZJDioIIjIg1vJEsBw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "NKLJTXQdwpeF5jMwSjCgFVyinopL8EN2QLdBMr+txpP22t0QUkA1yEhFNEcgoAkNOV/fw0/ivbPNOEfiy9exCw=="
+            },
+            {
+                "license_id": "afae357e-359e-464a-a1be-2d6fa751eb0c",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "2dUZfIVG7BW/OB1uBeW/qSEoRRkB5qucxvf98SHXlr36diIrLkn8B4BnyYlNnBFUaWSCFI2LLIkGh88Hr8PkDg==",
+                "delegation_confirm_sig": "qVW3XRxQSNajyPjsMQglEquvLjDQKXr2WV4HoH4hDLDK0U0IaP5oVt+dqqusSXG5KoFjApmwYKu067aP5d+fCQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "OfMqKDBhwdEMsivpoIO0rqKOrZrLp++YGBguYE2qS8i82ILCPUCq3tlbBHPbIjyRmYBzWzmkt0bvryMWFWSpDg=="
+            },
+            {
+                "license_id": "b1594925-c60c-42b3-8d55-8dcc6d3ae4c9",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "07QY0OoxR7kLJzhau0aqn/Sz8RZLBbshkRAI3Ywsp9x8ygS9RXZlzaDtNL2LQgo2rZEQD/p3Wgd/SYjIy85GCQ==",
+                "delegation_confirm_sig": "aMq9dxsKrEip13U7nrF1T7j29rnKFEhrGgeg3opKua+dPPzMqC6EkN4OntiZSpjg/u/kjnKydbuhKUtSO7SuCQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "mLHe3vkfUkyXsvhYQ06+wQ3p3Mm7LQHdTqzFQBumzZrE33rC8EUgf2x2McttW7K9qvt9Qkzudb1uG5eYaNJwCQ=="
+            },
+            {
+                "license_id": "b18499c4-f742-4311-a4f1-1bd79c0873a9",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "2zffcvpgB+EVzGGhDTq9Tn+3HPrWB47DA+TQvc0ZMG9EO6Uu/yaPZTDaiPllpAcNnnZY4o/Hnzw/HyKfslfiBA==",
+                "delegation_confirm_sig": "DtChUhUh32u4GFWoXrlZ1Jd7H515UQwm2Jz8PFIdWw+3l2cgqwlHcbaAAWZYZrgNcQCIsIAe7mInZt6B8AEgAg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "EunX4HOQ9mzNWBUjd1ukSWBinQWPnmanAgJc02XbT/SJw7X/Hdmp5YmXp8CiN13NjrTOsIlvcsCgQzi3hxQCBw=="
+            },
+            {
+                "license_id": "b3b84c07-dcb9-4fe3-a438-6fee4bb9650d",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "Tt0x/cpoTAd0jB8w4qLjA30MDEf+LCS2mzZj7J3OskdFao/OXmnX8kDeHiyMAJApgWNPAWlIqBeoaxkcIDz3CQ==",
+                "delegation_confirm_sig": "3JQP3sjBq4/9XQv66v9SvNjl01/TtKJQkcQQm2HNhjGTHeCXKIhG/aUseC094LwFbqkPZiIvGb5wJ17RAfioDQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "qx5yP5fbvQb4Jf/iWj0LeepT1RH8N2ymM8cGbLeLc3pI1UdFo2ZCTL8Km6z2DnbKZ+KJrE5C/bw6x2NHXeZZAg=="
+            },
+            {
+                "license_id": "b92ab569-5694-4ec4-b656-ec32979b0ab0",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "zJkjwX7ETwmU6ODN+3Gy2phhc1AsqW3iujUCSm+KcdDY9nImS/nXYnZoGMXozG1lEgzYHEtT5j5avRUlX5kfCQ==",
+                "delegation_confirm_sig": "ulLUJATvJSCimZX1L9WK7cJg8dvAzGo/UIFvT8ARBcIYV2L82n7mR70f9SEO3ONe3xk+uLU6Jf6FamoPwpHyAw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "ytLv3AwMCjeShbd4/FbfIO5IAlRzqf3TzKMpOI09JXCjPTTZBlqqqeVbUXJ7myDU6h8PDfXkfo/QpQtlN7R+Dw=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "8971ccec458b908255ea8b0293004093e808bbda0ca126391daa1ab4c86a5ef0",
+        "bls_key": "a04b059b2e935cb609107cd76c786896de8706f994fff4a41cd76641a35edce6bf7b9ba04b6b7ecab7484704a54d5ff2",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "bacb95d3-30df-4482-8a81-5ba3c2c072d6",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "r8hiEDZvmHxv4qcKiSTuPW5w7vrWlbEE0Z4tIkmo23eXckT8ynGVTouVbY4xnBqWW1Nqb1OyqGrRLUkhvy7rBA==",
+                "delegation_confirm_sig": "Ow91ezJquDbyw2P242TO5BsgYdxMbxefQXwGHV+5ywGg8z7m4TWiC8d8p9E1hetp4a23ZL2+vG2oYuoTCpQhBQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "G9lHGDOhGROYbjdG3gMjYqR1QWvcAboxXy5H1FS1flg2FVkxMSM0P3xXF/hG9p/VAPJVNJRnI2a2TpoYnbLsBw=="
+            },
+            {
+                "license_id": "beaf0d66-a9d0-417a-be90-cf5c31759f09",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "XgRXuYc/4kErhrRYCjZ6oqhN+GTeE6uzFXAzBdKrqpGOs0LMDkE57tj0mHMKrgPk6CAhX/P+hkTdOUHxWi89DA==",
+                "delegation_confirm_sig": "YdJPEPtj4QmZRyym5i81S+1tBkfq2Wdc2F9ohqzwL+uvS+icFS7FHDSasY+nmCUz2B6X28Ou2hNhXvMYb8LkDQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "bNhPfNCfT+Apz6tqyzOzsykECVCyGr/ONHfeQjta85FpLcVDXoYgTVm4Mcj0C+/60Ml/5ov9Sm4vGNbmlW+4CQ=="
+            },
+            {
+                "license_id": "c02f6d03-aa94-4dc8-a820-0454f8b0c0fa",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "aBKoKWprun5VpCoOoY9UUEpgIY8YGwgImfR33F3DdD0V9h+nYOwuUeFelTw588FCkpgoRT+9VY5FOq3AjZQFAg==",
+                "delegation_confirm_sig": "j9dr1J5Xb47rVeNDHkAZEeD3AgmyzwQU1OylnA9TGO67fiLhSpkVa8RACI+MCL2WGcHDRUtQV8TTtKesll78Dg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "zZkqG9VQQWlg/CMO2F97QQeEUNkv8RFBUreYjZK5xvKhle0J++qIbeyKT0MhTMB1d9iPnKJkQzT2KlmNPz77Cg=="
+            },
+            {
+                "license_id": "c49320b3-2ffb-47df-8697-3595443fee0a",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "ZCeSBuoMgA+V6Taw6WcgqMj+nvP35UyCPPTHvz3KtViTRaBbyvzRypM5CAitC5nIhKHLPjNdLLBpIRUmtuNxAA==",
+                "delegation_confirm_sig": "GubLuRZmRuaFpYmvuF5yLeBdv2duxynVdAo5xOJkdshXEBajvZ+12EIt/hNkzoMX4010OrPcOSewtBDI6mFgBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "KBLTq71lAZfJPIyvSqjiOgXCs0WljTC3PwLD1BOKCxtFjRMUTmZHbS3C5hCPShF/Gf/QLzl1CPjDx6wiboncDw=="
+            },
+            {
+                "license_id": "c6b1a426-f678-4697-a701-cbf0344038ad",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "5qZqLON93xHViCQ70XnZsBoBn3WzeGk00kjIMjDDq5d16ecdZ8OGLpL3TH3jkTcSFsJKvKqYcJIrk5YO72ZDBw==",
+                "delegation_confirm_sig": "QDcKflzO37JIexoMRFjPLs0xrOMDWrv+uzzVnoTkoJcCTilxwRIsyu6gnjspfdrd0ppAGD3PONcna5xqJD/AAw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "+9pQgzBf6402U82KaMaasW1THrL56n9KR/jtSd4x9WUcYEmnQOVpVScj7OmiCcjFh7eZ469QtrLmPIfFhTHDCA=="
+            },
+            {
+                "license_id": "c755e62c-257f-4545-ade6-cb833eab8c46",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "WtjnbNuHFyhEjGJL+WmbLqAxt3Hjq7BbUmg2ak4nh/ENDO3Oztge2jfkzV7rgGmn+c3LWwGSOTJS5bsQD40vCQ==",
+                "delegation_confirm_sig": "FX+m3AQRvT9lxy4G14P1Z+ytkssXz+wmSL36TDhBB9yjYuvFeBRt6RVidknbf/cSGTLX3Sb0INewfuO4mL3ICA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "AfzmgCHEwcQxauax8a2UJsFK1xbST54/XOpcLFL7t0GRQZrkaPBdvqU8pQC4pcu1gacIIRMBs/5jL03AiUiNAg=="
+            },
+            {
+                "license_id": "cd3d801b-17ff-4b79-afd3-7255d17ed46a",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "Lmd6pK3oKXsctlXpKytBwOxqq3i/IOxRFwxSmRcaMbpLDf7HZATjGmJuLh4QevNBddU/lTTfAS8vwioEsJbODw==",
+                "delegation_confirm_sig": "SrFO+fgn0vQhtPNe5FEZrMQHvO8rhyDbdheeFENlRmGrEFqZRrSYZAJX1XDmaA0eBUVz+NE0DzA3SJ7srq5OAA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "or2y04OR+A2ljjXQSg5wf7qhj0anxUK9ifvUtGdGLJBT5hGuy9C2cdPIBYoEHreUxtrG+duEwXekQTPFN+J0Ag=="
+            },
+            {
+                "license_id": "ce1fc915-6cfb-4a99-a6d5-8d7eed258266",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "2w71PcPcIDwGZQSPcT8Mr87Qf/OexqzpCrLAe69Wdfzelwoco+0/5QOrHrSGG4R7/ZkUOZzsGjWEvrAJk2MrBQ==",
+                "delegation_confirm_sig": "phkUAvRe7JmHGsd2+3j52PWu1hjZsgwlA2hBMDpvhLXdNZyCHfklZOJsN2bsY5auKEWBwWdR04oA9WoMY7lCDQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "vdVGcinFaAbGoZqGwWb121wzH3Je/C/2PxgIcp15pz8CziwqE122pIAgfgwux+a0Sjvv3swRtQZv3ftnXaw1Bg=="
+            },
+            {
+                "license_id": "ce2609bd-578b-46ec-a64a-1c0f7973776c",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "fNzzklXKK+vQp2FEt8Ftkqf+xRqypd7DFIyUbg/x+IYhODIv6uhnrU61djgl07ogChxKyYyu24+re+naI3xiBw==",
+                "delegation_confirm_sig": "qOMsgV3ufSv954TW6VvjaB3KKhbooItqjrdBXoctBWMXR/QFEbT73MtZGCT/rQ7Ld/sb2CYaOKefcqt3F40mCw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "QSRFAzf5C+03Lsp9p/IN8PVtA492wrCtBsUV7amd3aV6XcilKgiv7EvP3l/ItmTX7aLEL/Ltr0fwdY2pw1gYBw=="
+            },
+            {
+                "license_id": "d1155152-1bfa-4882-bb29-a3d09ce56bcd",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "zEHMnkJTl9TNNaDg4/duU8KJ8IMkFYeb9cX8MYlGbgoHTNncgwAhamaBDVpXiR3H8M3i45qdRhNAfgSKtO64Cw==",
+                "delegation_confirm_sig": "XQUEMyY7ImzWYU4/VyO9gnGfxcMIG7NR2Hh62ftFv+InkPokvBKS72FY2IakVR0uZhwm3+MIMhWE9yn1Sc2PCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "gCFNDkmtbgIaYxlkx1dR5LT7XcOKJEkbyrrcKIDcebJqGmorI7WgJmXfRIJpkqX+lfW0/1EzJzz6Oe2nYfYoBQ=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "9ce61846b65f9f523676e530797d67def8940cb0c75753ad77c41327b0e4a9ee",
+        "bls_key": "ab83ab283cf017b2665d466763b884ab762b76fc7d8115e013d03ed6470fd672fc74e1d0bb1f7fc3341b70a3a6b6cfe8",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "d77340a2-e611-499b-ae24-afb6fc5458f4",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "jQ8l9+ZmD9tH05ecZKS5LllHaRDr8BeFiUS+0PaKc6j08k9ZTq9phpaJK3/zuE15vfrAWs5i0B9Cq61mD9mwAg==",
+                "delegation_confirm_sig": "fqelbKEU4F46LFIbLJ+llgmGV8B1qL74D1EijXB0UCU4hvP3q9DYrzdqTlvyOfWEJovcAoG3JFwPa0B6Zd8WDQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "9ekELIaMx6H07MfpQ8LyR+7VRDAOWI5gwc2yBoKfDsllc9hAhXuvilKBwOk6Qkyx4Oalcvvp9Q1xXlo+RzydBA=="
+            },
+            {
+                "license_id": "d89e9463-6bfa-4f5a-87d1-791cb9f6d665",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "G6O0gNGMlv+b63O07QYvcbM8wizrqN3OwTwMZfPydzKuWOXIfiUvz/SHq2UYJSApLwis3bhgDjkdq32KcV+3CA==",
+                "delegation_confirm_sig": "VeYPhb641ZdDdAULsWRucJDFr95SDcTocS7GdOTddUtZ6wQ75aeInDaLjgpfNrAFPy7nqRlXYs/Vww7FfHVaAw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "gfVBFsiU+wUC32LcOL60KymdbW7EiLMuBZeB5OGC5tPlSeeqUFzRPxF02EfDEOZIEiAoQzDcYRR7Hw1prnWgCg=="
+            },
+            {
+                "license_id": "dcb3f0aa-d9f0-4995-8d6c-b730e28e62a1",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "QAkWZvM5PWEIxK90kXVjkZ5x5AjuUjpeOaYtiaESlvaoOjuHN/rggHdiSAhU42EbrxrOtCUG6WCNQRISncVkCw==",
+                "delegation_confirm_sig": "KTdV6EZqJI16pSGjm82J4EvLuffXuByayhhdr5EWtYnkICoF/N82TwAc5O8SgUm5IV5HS+MGvP+el31VOJbfBA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "ZLmwaCwYUrTkrlxQVn0ayLdKIfoNxWLcREMDrNx0M23r/VuWdA72DpFBHnlPCAOFudmNUQqcQyq5TMNmPJZEDg=="
+            },
+            {
+                "license_id": "dd3424f7-4e0e-401c-ae59-03625ac650dd",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "lKLr8rGUGAoVr0YO70bCfE1iG0u76wavW7WdxQmY/iWYdFljPe1HkIZfh7fOlBX4RWkpPyH1cbhGQp8jGp/UAw==",
+                "delegation_confirm_sig": "pLDy2dMxOeyMT60CHodhCbnpFSYYd2/BhhrOPwrXekpDp7s3h3DlMsbOasHOXzSpVA8UwuXlz0OQ8kb4w6gzCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "EqyL27N3hWaNKoPd7/iHtnbf07FCK4GWVnAAidsq4N+jmDzXwyomApsbnKMTGYAcllNdWTwqo3j0RfteXosaBw=="
+            },
+            {
+                "license_id": "dd4e0e94-540d-4e72-ad2f-793eae415c83",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "CmtLMFbyKjkdoaOgXrDaVviSXYGNcMrHgqc8SMp9+8VsTt/7EOqlCOuGrSkq/+vsqIXAfVVbRS5BxwDBKUtsDg==",
+                "delegation_confirm_sig": "FgMlHkn2K3xdNr4vKSBueHnWWi09dS1DWW2Yc1dB8kF8FIvUq46bLnSceILeaH1MxERr0m9LTht3ddz6vUYYDw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "xbleP/EsRtDB/sylKaT4lILSTtUWzegqDTDz6luqM42i2eMKdto6lzDU/e369wxKW6MiA3GfGQ3rHWaXfsEjBA=="
+            },
+            {
+                "license_id": "df05bf1f-b332-4a68-b73e-55c869a45144",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "K+89lKOEYG3Pm7wkA5LGUmFMtsNFdazBfGgePcyRDtwx5XIzAqcie+f7sI4Yxo/x7o4H7sO8fLMqfK8wVd+NCg==",
+                "delegation_confirm_sig": "twqKpi6SpN4u1xHVvrNF50vGfE/mIuQu25eqnvZdRWiQiRQQDwE4bE40qzjYuIZN2VmH93TRlxU9kBjG7tKnCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "iKGzRZnzoLMbGscJJWIBfm3gU67JMzHVkdIkk8yUFf8nGOb6M2mbGvDqKsgdds9DOf3WFlpiQUeQAZViUOtWAA=="
+            },
+            {
+                "license_id": "e056d47b-6fa7-41c4-9206-3f5d1947c975",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "uWD1+XC5vGmIH7okiOc0I6wOKrTmoWMSYRRSU4SrDBnbFF8lTp7uCUgO7DXsWgLMe/Gvb1MHzdO4GtZzQ0zODA==",
+                "delegation_confirm_sig": "k0p9M/xAk/emF8ETcsT8p/+2BOE+4m93apWXNXoZlOsqIhzHEk0WDMuoTicQZn0V9hziTwiArHeE8PZfReQyDg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "2u16t2wFjXJnEbt2nhqttmXIzC6rrIEgT3DD5113k7jnjDuz5aHGznLoETOVQcOFNIcziGsqakGeJexGZW+NDQ=="
+            },
+            {
+                "license_id": "e2250d10-b234-4bb6-8aa8-6b7bbd35c678",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "zYCREZ0kRnm4qsHXuKjODxesoku56YCp4P+IBy8we6EaVcCpAWwQMmN+4c889Tsou7hkawsUjVDZdwVlVLAlBw==",
+                "delegation_confirm_sig": "yG245jGq7zr1GeJnR+sqSHhWG5KVjs5f4tYUesdJmqrz0QIkPTDBZpV22mnPQd0o2D+vUE9lpSSIB2X8zyLTCg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "px6haytAS3uxScfLSf67cRG+ICCE7xrS3fbm7cyT4TulZYgnrA0pNMes2+ZvlZZY88D0FZ7IdJ6Vjv2N1dRyBg=="
+            },
+            {
+                "license_id": "e275a77b-003a-4c60-9547-76ba5ee89b73",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "mLe2dE14DYjU3oAGzlVYOzb4YxuHhhaXZA0xzIH35HQ8DaBLK5oEVNFZvGWxDyo/2AMLwW5xtMF+0QhWXn/rAw==",
+                "delegation_confirm_sig": "35XLpuHnCgysIUgz2dbDKLfFavOpdzGxGDP0wKidi8EK2Q5zB8bQdqjFDy9iqnbDMNKfp3WO5KJoaisjK4H1CA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "KpNk+qCip/1QH8V0NzN3MKU4JXDTdn50IgltG5pFN8K3nsPvd3gtDOiBPSgVVv8gF04dDcuNFL648ySkO2V5Dg=="
+            },
+            {
+                "license_id": "e36ac1f0-2dbe-4217-a486-a484d65b2fe2",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "Ok+da+aoaomiy0/xbP+CM2SNlteV0i8BfjBT9wp0yh7aHpLiBu69Dk6hF/UG7SCmXDdrQxaVzQQZUsiwk1tCDQ==",
+                "delegation_confirm_sig": "iLVhu+FH/0uzzqZyiWkVgpdGUc/9l9KHb807hl07QpJSbgb4SzPKl95SPRS329MzMMBwU9CSPUG8v3MaBQdOCQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "ZHXroeBtT01zIsxCCB0D/tasFObtdh5nJqxD1Fioz5LncTVQmWRkBuI4fdpkFOQX7KXaM00bPLdeRDHYbvj5CQ=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    },
+    {
+        "pubkey": "c7434b431dc21c2f531234382815dd70e1d18ed9f6fa4b24d2af5cc074797f12",
+        "bls_key": "8cf7d14bcade81a44c8bc58a02b0448e85e77d47d9c644adfe3512d3c5fcdc2a028cfb96aff704a70f2cce27c96cd706",
+        "proxies": {},
+        "signatures": [
+            {
+                "license_id": "e38773aa-adcf-4f40-8283-d60a20d5e689",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "NfKgqgAz9wCmC2V/pDl8ih0Ag5TI/hM2I/nG753X6XoIpOBve8KCgopUp7K7EUMNEEeWLtsKyFyEsi0PQwMmBQ==",
+                "delegation_confirm_sig": "8AYfuASi9W2IsNxQUtbVSFMKp08wX4GrRBm26F93SE2CaHhAoSC5djksNCaMo98N+qVYHAY8v6sQ7VH+QXZrCA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "wHDsC+c5Va0fqLyuhiYVU6oO1+rOzoRXRbUdS3vogR3dP1I7hkazpKzeFK4RsMfUxweG46HsEvFH45qIuLx6DA=="
+            },
+            {
+                "license_id": "ef334519-ccb0-4e54-bb58-494a31030df4",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "zzORa3JWD7YTIb+nSPEZ4vdSUNKnwqrMOfrg5GyeemRNOoIi8vvD6y8z1Q4q9fE3Gvbb6BPqBJWJ+ylyx5kaCg==",
+                "delegation_confirm_sig": "JjuvqfV2fmhIdhRygzaivjnYbhdn2AD2ghlck3XRrx55KxShqnLp5453VKVlJDK3LD3JaHl0QuIcps5SRyeJCw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "yfI56auV0uNn/SA3FNwqAsy3o94JDsIv/DLIH6e3CkbUYDpa+SnFpteU3lBkFNwmxozHep1jOO6WtV77jq+SAg=="
+            },
+            {
+                "license_id": "f079c8b4-f357-4b47-8f06-ce39491de82b",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "YEN6CJqwyr/Zj4sTnPwOSmwB2dXxCki2XwgKwNJJQ1J5X2LQT2coDOybNhVP+hr8KaF5JMIPT0j24chbbr0vDw==",
+                "delegation_confirm_sig": "S8L2WERXD3+zgjKQP3xMyCXjrpESUL6/fhn0XefHPgT97Q0rc+jo4dVYa1tLo3Cih3PSzDuIyMr2MeIBH4Q9Dg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "a3JfrRm9aTjgDitN+QEPXiECxqHyUOjYmwG1Rum3Wc/dIlJl3W2RmEXULA/dGEMSzB9mNoJ1zAglEqZRudpaAA=="
+            },
+            {
+                "license_id": "f3f0c11c-ec5a-4b59-ae9c-8bb787cd4c8e",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "hqLsPuwqdgDIgGK6Zz52Bathpd0kX5n9ej9gw3F/yShB6Rukv+B7dvsq/JsA8DtuVtx79LQOxu0+32URuItpDA==",
+                "delegation_confirm_sig": "AHBhumlXe6V96FkGZSBEsIq/Lnralh4yt35b1m8oXHgr8E+njlyaQCdkU//KO7E3CCUM7sBBvPM2ic91VS9zCw==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "7weJNVgb2xUsVc3IGkcbkp/+wpwUjnYv/4GhLicQqybhV6VZALjcYRkJbQP1OyIEKly+3teEBoPqs9TEI1fZDQ=="
+            },
+            {
+                "license_id": "f7433539-9bf3-4782-9de1-82afb17565c5",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "UDGcBAZkQLArEpLG0F8kZfB7A/U2cPKUIi9U8UnQr3AJ0Jbe7/DYMZe7cXsbELE/4iQSRYQMnDF6m8NAYU/5Cg==",
+                "delegation_confirm_sig": "fyiPhDLwdSrVbGHamub3w50Amro6mGgYfZuHSuCxnRP2zN4Prm6VD9RnyqaoSjhFtQhUIu0rDHn8usytO9ksAg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "xaExIHSOegkWhtFBPO2JLB7ReQCUUcOiclFqpP9zP4MVsAHSTJG1z1KoXLg26Ckesik3zJRyqL/dmyfDBBmtAw=="
+            },
+            {
+                "license_id": "f8179438-82e2-4760-8ef7-73f61d75d8ef",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "/jao6YmtxByX+NjCEEMJoG2xTrQtT6baxiberRRVDaFk7rlvb+KsifmrAfEev9Y6OTrwVBHwog+0KQrhRfBHCQ==",
+                "delegation_confirm_sig": "uN3pRd3z8H4jGdBhDd9fLXqswzRzaT06KYSb5AtZGQUfSfbJonhB/3EtauPHXzsolgyQosRU781KLxkA5kBqBQ==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "cqYE2Tw3TvKNf9W0TuOm6JvIMV2r4mjlQG7ZPsFxrAJHWK5tZ3JTljUq1pEUp2sTym88Quk8gT3YG+i2NQC8BA=="
+            },
+            {
+                "license_id": "f9fb21ca-8a99-4ef6-8182-15f3631c9413",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "HzW8YTP7tb/VIC5EBhTVkO1k+S2L2jQK6dM60MNYVYrGVWAvH0taOCwtOH29PJs2eNKzvosJF9f3d4PQK+oJAw==",
+                "delegation_confirm_sig": "MAuDmzPP85V09Y5NCDLXNp16ndybMIn/wi+7gKXubc1PWK7g8pyiJUqcv2FbHLgh8KEZlffO2140f5C9eGLsDA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "nF1qhLAakCjAwND5nMil4mWSCCNGIHg9xX5uYbI4s99hMRKRgjHaxdlZHh4kgWjPL02ufb2DiMYFZ7eZLOqqAw=="
+            },
+            {
+                "license_id": "faaa4ef0-cc23-4046-83ce-9d2dbb434596",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "N+KKBywsd2rpPejOoArfcqB5RHeIGKwwu3J6gl5edQGSFB2hS7vma7Kj7q4cYxG1edlrWqsADWtjbu2PvisGDg==",
+                "delegation_confirm_sig": "J/67BUax/8h/giqIprNJx3pICsVnWQAXzSGxPOnp5FUtAA5r7k1MfRIh8kdfuqWvpJixiyKQtJxvy8KyQjFWAg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "ntLAUGFiL7TycuJlMFkIEyBanfk9V5sSDNz767/Gd+aRQmUkWf1GrVD6WJXdXBKK2Iw+lVyNlzAHeAB/eF+OBA=="
+            },
+            {
+                "license_id": "fc2dc607-27c5-49e8-b4ce-b1ef9f3ef080",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "X6z6LRu1EZSQNnnrKtQCVBIMG/RNMl/lBpkXdCebDy4sKz8UPwIVrSEbga/zGR2twMY6o2BXZRWA3nUl1IxkDQ==",
+                "delegation_confirm_sig": "iTDiguQclRpMk+tb5XssLMqUlJH5V/UDyCsc2Z8DxezPYDGl/nOZtfJnaqWOFConoNKjE0boM0ad562eCejUBg==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "oL4DISzyzKIX8/3UbZnOggtr9UdJQ+CMxQ77snOuEWaB4J1ghRQU1I6CZGN3Tc7waHvkd0RK2UjDO+T1xMW1BQ=="
+            },
+            {
+                "license_id": "fd5cea4b-2674-4b23-8a44-ccfb4097141a",
+                "license_owner_pubkey": "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619",
+                "provider_pubkey": "9099e02173b5f5478b13c444abefd51c616a7b98e19be25869f2137555190225",
+                "delegation_sig": "+iQz6UuSxkXeG3++mmyGfAkiFAiWLF6QXSsBxk97o/Py7gOCMsrR5BpKz7QHWGp9IICaEhHE2fk8591YRywDCw==",
+                "delegation_confirm_sig": "eZXpuP56/z9/HaQfW0/M7X99HWQ8Jn//ZIQx1lC+nUBAz697hXvAhfKe2ilWaRXZ5oqUT0EaTA512AFE1Aj6AA==",
+                "timestamp": 1745936357,
+                "license_proof_sig": "q34byeuEH4xaQkzIuBKBLovdpAZGHGvNjspwmjZvjFWMwbAWn0j/l50aggazEO/hlx60ewIyYmPIEoBY8a9rDQ=="
+            }
+        ],
+        "licenses": {
+            "3906a6bad4467d7eeb347b06c540f6dfbd5ed43a09cd7c7882621e912682c619": 10
+        },
+        "version": "0.3.0"
+    }
+]

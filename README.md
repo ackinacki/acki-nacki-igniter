@@ -8,6 +8,7 @@
   - [Prepare Configuration Files](#prepare-configuration-files)
     - [Generate Node Owner and BLS  Keys and Create `keys.yaml`](#generate-node-owner-and-bls--keys-and-create-keysyaml)
     - [Prepare Confirmation Signatures and Create `config.yaml`](#prepare-confirmation-signatures-and-create-configyaml)
+  - [Running Multiple Igniter Instances on a Single Server](#running-multiple-igniter-instances-on-a-single-server)
   - [About Automatic Update](#about-automatic-update)
   - [Run Igniter with auto-update](#run-igniter-with-auto-update)
   - [Run Igniter without auto-update](#run-igniter-without-auto-update)
@@ -25,7 +26,7 @@ This code was tested on Ubuntu 20.04.
 ## Prerequisites
 
 - Docker 
-- [tvm-cli](https://dev.ackinacki.com/how-to-deploy-a-multisig-wallet#create-a-wallet-1) 
+- [tvm-cli](https://github.com/tvmlabs/tvm-sdk/releases) 
 
 ## Generate a Node Provider Key Pair
 
@@ -49,8 +50,10 @@ Keypair successfully saved to node_provider_keys.json.
 
 ## Get Delegation Signatures
 
-For a license to be delegated to this Node, you must obtain a delegation signature from the License Owner for each license.
-A Node can operate with a minimum of one license and a maximum of ten licenses delegated to a single Node.
+For a license to be delegated to this Node, you must obtain a Delegation Signature for each license.
+
+**NOTE:**  
+A Node can operate with a minimum of one license and a maximum of 20 (twenty) licenses delegated to a single Node.
 
 Provide License Owner with your Node Provider pubkey and ask them to sign a delegation.
 Delegation Signature can be generated via [Acki Nacki Dashboard](hhttps://dashboard.ackinacki.com/licenses) or [manually](./docs/Manual_license_delegation.md)
@@ -67,7 +70,18 @@ Generate both the [**BK Node Owner keys**](https://docs.ackinacki.com/glossary#b
 
 Refer to the [License Delegation and Attachment](docs/License_attachment.md) section to learn how to generate the required values for the `signatures` section.
 
+If you plan to operate the Block Keeper via a [Proxy](https://docs.ackinacki.com/protocol-participation/proxy-service), include the relevant information in the proxies section of the config file.
+
 Create a [`config.yaml`](./config-template.yaml) file based on the provided template
+
+## Running Multiple Igniter Instances on a Single Server
+
+If you plan to run multiple Block Keeper (BK) nodes on a single server, you must also run the same number of Igniter instances on that server. Each Igniter instance must use the same public IP address as its corresponding BK node.
+
+**Important:**  
+Each Igniter instance requires its own dedicated configuration file.
+
+To run multiple Igniter instances on a single host, you need to create separate configuration files (e.g., `config_1.yaml`, `config_2.yaml`, etc.) with unique values for the `ADVERTISE_PORT` and `API_PORT` parameters in each file. You can assign any available (non-conflicting) ports.
 
 ## About Automatic Update
 

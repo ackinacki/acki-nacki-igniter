@@ -12,6 +12,17 @@ signatures:
     delegation_confirm_sig: # Confirmation signature from the provider
     timestamp: # Timestamp of the <delegation_sig> creation
 
+# This section, especially the cert field, is optional. Use it only if you have proxies.
+#
+# proxies:
+#   - socket_address: "ipv4_address:port"
+#     cert: |
+#       -----BEGIN CERTIFICATE-----
+#       MIIDdzCCAl+gAwIBAgIEbZUg8DANBgkqhkiG9w0BAQsFADBvMQswCQYDVQQGEwJV
+#       MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtv9bXZ57KzE3...
+#       uFJgx1A/kErMItvEr3vW9YKtRfA1LP5zZb8fE6TwE9fY2kW2E=
+#       -----END CERTIFICATE-----
+
 # Enable auto-update and automatic restart of the Acki Nacki Node Docker image
 auto_update: true
 

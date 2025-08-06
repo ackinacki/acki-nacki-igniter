@@ -76,7 +76,7 @@ impl ContainerUpdater {
         let binds = {
             let mut binds = vec![format!("{}:/var/run/docker.sock", self.docker_socket)];
             if let Some(config) = &self.docker_config {
-                binds.push(format!("{}:/config.json", config));
+                binds.push(format!("{config}:/config.json"));
             }
             Some(binds)
         };

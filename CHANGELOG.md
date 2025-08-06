@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.4.0] - 2025-08-06
+### New
+- Number of licenses per Igniter instance increased to 20. 
+- Warning log added added in case a license has been re-delegated to another Igniter instance:  
+  `"WARNING: Licence with id {} was revoked"`
+
 ## [0.3.0] - 2025-06-17
 
 ### New

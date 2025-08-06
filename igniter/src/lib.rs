@@ -13,15 +13,17 @@ mod config;
 pub mod errors;
 pub mod gossip;
 pub mod open_api;
-// pub mod transport;
-
-use std::collections::HashMap;
+pub mod revoked_license_watcher;
 use std::collections::HashSet;
-
+pub mod utils;
 use base64::engine::general_purpose::STANDARD;
 use base64::Engine as _;
 
-pub const MAX_ALLOWED_LICENSES: u32 = 10;
+use crate::open_api::routes::check_proxy_socket_addresses;
+use crate::open_api::routes::Licences;
+use crate::open_api::routes::VerifiedNodeStateNoLicenses;
+
+pub const MAX_ALLOWED_LICENSES: u32 = 20;
 
 #[derive(Debug, Clone, Copy, Display, EnumString, PartialEq, Serialize, Deserialize)]
 #[strum(serialize_all = "snake_case")]
@@ -36,27 +38,34 @@ pub enum ZerostateKeys {
 
 impl Params {
     pub fn to_gossip(&self) -> Result<Vec<(String, String)>, IgniterError> {
+        let proxies = serde_json::to_string(&self.config.proxies)?;
+
+        if !check_proxy_socket_addresses(Some(&proxies)) {
+            return Err(IgniterError::InvalidProxies);
+        }
+
         let mut keys = [
             (ZerostateKeys::Pubkey.to_string(), self.keys.wallet.pubkey.clone()),
             (ZerostateKeys::BlsPubkey.to_string(), self.keys.bls.pubkey.clone()),
-            (ZerostateKeys::Proxies.to_string(), serde_json::to_string(&self.config.proxies)?),
+            (ZerostateKeys::Proxies.to_string(), proxies),
             (ZerostateKeys::Version.to_string(), env!("CARGO_PKG_VERSION").to_string()),
         ]
         .to_vec();
 
-        let signatures = self.config.signatures.clone();
-
-        LicenceSignature::check_all_signatures_in_section(
-            &signatures,
+        let verified_signatures = VerifiedSignatures::create(
+            &self.config.signatures,
             &BACKEND_VERIFYING_KEY,
             &self.keys.wallet.pubkey,
             &self.keys.bls.pubkey,
         )?;
 
-        keys.push((ZerostateKeys::Signatures.to_string(), serde_json::to_string(&signatures)?));
+        keys.push((
+            ZerostateKeys::Signatures.to_string(),
+            serde_json::to_string(&verified_signatures.get())?,
+        ));
 
-        let licenses = LicenceSignature::derive_licences(&signatures);
-        keys.push((ZerostateKeys::Licenses.to_string(), serde_json::to_string(&licenses)?));
+        let licenses = Licences::derive_licences(&verified_signatures);
+        keys.push((ZerostateKeys::Licenses.to_string(), serde_json::to_string(&licenses.get())?));
 
         Ok(keys)
     }
@@ -65,7 +74,7 @@ impl Params {
 impl LicenceSignature {
     // These functions concatenate values into a string that will be signed.
     fn license_proof_prepare(license_id: &str, license_owner_pubkey: &str) -> Vec<u8> {
-        format!("{}{}", license_id, license_owner_pubkey).into_bytes()
+        format!("{license_id}{license_owner_pubkey}").into_bytes()
     }
 
     fn delegation_prepare(
@@ -74,8 +83,7 @@ impl LicenceSignature {
         provider_pubkey: &str,
         timestamp: u64,
     ) -> Vec<u8> {
-        format!("{}{}{}{}", license_owner_pubkey, provider_pubkey, license_id, timestamp)
-            .into_bytes()
+        format!("{license_owner_pubkey}{provider_pubkey}{license_id}{timestamp}").into_bytes()
     }
 
     fn delegation_confirm_prepare(
@@ -86,8 +94,7 @@ impl LicenceSignature {
         bk_bls_pubkey: &str,
     ) -> Vec<u8> {
         format!(
-            "{}{}{}{}{}",
-            license_id, license_owner_pubkey, provider_pubkey, bk_node_owner_pubkey, bk_bls_pubkey
+            "{license_id}{license_owner_pubkey}{provider_pubkey}{bk_node_owner_pubkey}{bk_bls_pubkey}"
         )
         .into_bytes()
     }
@@ -155,13 +162,27 @@ impl LicenceSignature {
         self.check_delegation_confirm_sig(bk_node_owner_pubkey, bk_bls_pubkey)?;
         Ok(())
     }
+}
 
-    pub fn check_all_signatures_in_section(
+pub struct VerifiedSignatures {
+    inner: Vec<LicenceSignature>,
+}
+
+impl VerifiedSignatures {
+    pub fn from_checked_state(state: &VerifiedNodeStateNoLicenses) -> Self {
+        VerifiedSignatures { inner: state.get_signatures() }
+    }
+
+    pub fn get(&self) -> &Vec<LicenceSignature> {
+        &self.inner
+    }
+
+    pub fn create(
         signatures: &Vec<LicenceSignature>,
         backend_pk: &str,
         bk_node_owner_pubkey: &str,
         bk_bls_pubkey: &str,
-    ) -> Result<(), IgniterError> {
+    ) -> Result<VerifiedSignatures, IgniterError> {
         if signatures.len() > MAX_ALLOWED_LICENSES as usize {
             return Err(IgniterError::TooManyLicenses);
         }
@@ -169,12 +190,12 @@ impl LicenceSignature {
             return Err(IgniterError::NoLicenses);
         }
         let backend_pubkey_bytes =
-            hex::decode(backend_pk).map_err(|_| IgniterError::InvalidBackedKey)?;
+            hex::decode(backend_pk).map_err(|_| IgniterError::InvalidBackendKey)?;
 
         let backend_pubkey_slice: &[u8; 32] = backend_pubkey_bytes
             .as_slice()
             .try_into()
-            .map_err(|_| IgniterError::InvalidBackedKey)?;
+            .map_err(|_| IgniterError::InvalidBackendKey)?;
 
         // Check all signatures and check that all are unique
         let mut seen = HashSet::new();
@@ -184,20 +205,13 @@ impl LicenceSignature {
                 return Err(IgniterError::DuplicateLicenseId(sig.license_id.to_string()));
             }
         }
-        Ok(())
-    }
-
-    // Generate `licenses` from `signatures`
-    pub fn derive_licences(signatures: &[LicenceSignature]) -> HashMap<String, i32> {
-        signatures.iter().fold(HashMap::new(), |mut acc, sig| {
-            *acc.entry(sig.license_owner_pubkey.to_string()).or_insert(0) += 1;
-            acc
-        })
+        Ok(VerifiedSignatures { inner: signatures.clone() })
     }
 }
-
 #[cfg(test)]
 mod tests {
+    use std::collections::HashMap;
+
     use ed25519_dalek::SigningKey;
     use rand::rngs::OsRng;
     use serde_json::json;
@@ -235,7 +249,7 @@ mod tests {
         let mut lics = vec![];
         for i in 0..amount {
             // Create license_proof_sig
-            let license_id = &format!("license_id_{}", i);
+            let license_id = &format!("license_id_{i}");
             let message = LicenceSignature::license_proof_prepare(license_id, &owner_verifying_key);
             let license_proof_sig =
                 STANDARD.encode(ed25519_sign_with_secret(backend_signing_key, &message).unwrap());
@@ -334,9 +348,11 @@ mod tests {
                 license_proof_sig: "license_proof_sig".to_string(),
             },
         ];
-        let licences = LicenceSignature::derive_licences(&signatures);
-        assert_eq!(licences.get("owner_pubkey_1").unwrap(), &2);
-        assert_eq!(licences.get("owner_pubkey_2").unwrap(), &1);
+        let checked_licences = VerifiedSignatures { inner: signatures.to_vec() };
+
+        let licences = Licences::derive_licences(&checked_licences);
+        assert_eq!(licences.get().get("owner_pubkey_1").unwrap(), &2);
+        assert_eq!(licences.get().get("owner_pubkey_2").unwrap(), &1);
     }
 
     #[test]
@@ -360,7 +376,7 @@ mod tests {
         let signature =
             create_license_signature(backend_signing_key.as_bytes(), 2, pubkey, bls_pubkey);
         let yaml_string = serde_yaml::to_string(&signature).expect("Failed to serialize");
-        println!("Signature:\n{}", yaml_string);
+        println!("Signature:\n{yaml_string}");
     }
 
     fn default_config_and_keys() -> (Config, Keys) {
