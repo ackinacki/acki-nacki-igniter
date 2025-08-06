@@ -6,6 +6,8 @@ use anyhow::anyhow;
 use chitchat::ChitchatId;
 use chitchat::ChitchatRef;
 use chitchat::ClusterStateSnapshot;
+use chitchat::NodeState;
+use poem_openapi::param::Query;
 use poem_openapi::payload::PlainText;
 use poem_openapi::OpenApi;
 use serde::Deserialize;
@@ -13,10 +15,36 @@ use serde::Serialize;
 
 use crate::config::LicenceSignature;
 use crate::config::ProxyConfig;
+use crate::utils::remove_with_outdated_timestamps;
+use crate::utils::ContainsVec;
+use crate::utils::RevokedLicense;
+use crate::VerifiedSignatures;
 use crate::ZerostateKeys;
 use crate::BACKEND_VERIFYING_KEY;
 
 pub static DEFAULT_GOSSIP_INTERVAL: Duration = Duration::from_millis(500);
+
+pub const MAX_PROXIES: usize = 10;
+
+pub fn extract_verified_state_without_licences(
+    node_states: Vec<NodeState>,
+) -> (Vec<VerifiedNodeState>, Vec<RevokedLicense>) {
+    let mut verified_state_without_licences = vec![];
+    for state in node_states {
+        // Create hashmap from non-deleted key-values
+        let k_v: HashMap<String, String> =
+            state.key_values().map(|(k, v)| (k.into(), v.into())).collect();
+
+        match VerifiedNodeStateNoLicenses::from_gossip(k_v) {
+            Ok(data) => verified_state_without_licences.push(data),
+            Err(err) => tracing::error!("Skip invalid data: {:?}", err),
+        };
+    }
+    let (verified_state, revoked_licenses) =
+        VerifiedNodeState::from_state(verified_state_without_licences);
+
+    (verified_state, revoked_licenses)
+}
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct ApiResponse {
@@ -34,6 +62,11 @@ impl Api {
     pub fn new(chitchat: ChitchatRef) -> Self {
         Self { chitchat }
     }
+
+    pub fn get_verified_state(&self) -> (Vec<VerifiedNodeState>, Vec<RevokedLicense>) {
+        let node_states = self.chitchat.lock().state_snapshot().node_states;
+        extract_verified_state_without_licences(node_states)
+    }
 }
 
 #[OpenApi]
@@ -41,6 +74,9 @@ impl Api {
     /// Chitchat state
     #[oai(path = "/", method = "get")]
     async fn index(&self) -> PlainText<String> {
+        // We need verified state to compare derived licenses with the licenses in the current state
+        let (verified_state, _) = self.get_verified_state();
+
         let (cluster_id, live_nodes, dead_nodes, mut state_snapshot) = {
             let chitchat_guard = self.chitchat.lock();
             (
@@ -53,22 +89,40 @@ impl Api {
 
         // Parse each node_state to check that:
         // 1. it has all required properties
-        // 2. signaturesare valid
-        // 3. signatures  and `licences` match
-        // 4. all signatures are unique
-        // TODO: We do not validate the `proxies` property, should we?
+        // 2. signatures are valid
+        // 3. signatures and `licences` match
+        // 4. Check that proxies contains valid socket addresses
         state_snapshot.node_states.retain(|node_state| {
             let k_v: HashMap<String, String> =
                 node_state.key_values().map(|(k, v)| (k.into(), v.into())).collect();
 
-            match VerifiedNodeState::from_gossip(k_v.clone()) {
-                Ok(verified) => match validate_licenses(&k_v, &verified.licenses) {
-                    Ok(_) => true,
-                    Err(err) => {
-                        tracing::error!("Skip invalid data: {}", err);
-                        false
+            // Check that node_state has all required properties
+            match VerifiedNodeStateNoLicenses::from_gossip(k_v.clone()) {
+                Ok(VerifiedNodeStateNoLicenses { pubkey, .. }) => {
+                    let derived_licences =
+                        match verified_state.iter().find(|s| s.pubkey == pubkey) {
+                            Some(x) => x.licenses.clone(),
+                            None => {
+                                tracing::error!("Skip node with pubkey {pubkey}. It is not included in verified state");
+                                return false;
+                            }
+                        };
+
+                    if let Err(err) = validate_licenses(&k_v, &derived_licences) {
+                        tracing::error!(
+                            "Skip node with pubkey {pubkey}. It provides invalid licenses info: {err}",
+                        );
+                        return false;
+                    };
+
+                    if !check_proxy_socket_addresses(k_v.get(&ZerostateKeys::Proxies.to_string())) {
+                        tracing::error!(
+                            "Skip node with pubkey {pubkey}. It provides invalid proxy info",
+                        );
+                        return false;
                     }
-                },
+                    true
+                }
                 Err(error) => {
                     tracing::error!("Gossip node state can't be parsed: {:?}", error);
                     false
@@ -83,27 +137,54 @@ impl Api {
         )
     }
 
-    /// Export data in format applicable for zerostate.
+    /// returns all licenses that have been re-delegated to another node
+    #[oai(path = "/getRevokedLicenses", method = "get")]
+    async fn get_revoked_licenses(&self, provider_pubkey: Query<String>) -> PlainText<String> {
+        let pubkey = provider_pubkey.0;
+
+        let (_, revoked_licenses) = self.get_verified_state();
+        let your_revoked_licenses: Vec<RevokedLicense> =
+            revoked_licenses.into_iter().filter(|elem| elem.provider_pubkey == pubkey).collect();
+
+        if your_revoked_licenses.is_empty() {
+            return PlainText(
+                serde_json::to_string_pretty(&"No revoked licenses found")
+                    .expect("Serialization can't fail"),
+            );
+        }
+        PlainText(
+            serde_json::to_string_pretty(&your_revoked_licenses).expect("Serialization can't fail"),
+        )
+    }
+
+    /// Export data to create zerostate
     #[oai(path = "/export", method = "get")]
     async fn export(&self) -> PlainText<String> {
-        // Creating unverified zerostate from chitchat info
-        let mut zerostate = vec![];
-        {
-            let chitchat_guard = self.chitchat.lock();
+        let (verified_state, _) = self.get_verified_state();
+        PlainText(serde_json::to_string_pretty(&verified_state).expect("Serialization can't fail"))
+    }
+}
 
-            for state in chitchat_guard.state_snapshot().node_states {
-                let k_v: HashMap<String, String> = state
-                    .key_values() // returns  only non-deleted key-values
-                    .map(|(k, v)| (k.into(), v.into())).collect();
-
-                match VerifiedNodeState::from_gossip(k_v) {
-                    Ok(data) => zerostate.push(data),
-                    Err(err) => tracing::error!("Skip invalid data: {:?}", err),
-                };
+pub fn check_proxy_socket_addresses(str_value: Option<&String>) -> bool {
+    match str_value {
+        Some(str_value) => match serde_json::from_str::<Vec<ProxyConfig>>(str_value) {
+            Ok(records) => {
+                if records.len() > MAX_PROXIES {
+                    return false;
+                }
+                let mut is_ok = true;
+                // check that if cert exists, socket_address exists too
+                for ProxyConfig { socket_address, cert } in records {
+                    if cert.is_some() && socket_address.is_none() {
+                        is_ok = false;
+                        break;
+                    }
+                }
+                is_ok
             }
-        }
-
-        PlainText(serde_json::to_string_pretty(&zerostate).expect("Serialization can't fail"))
+            Err(_) => false,
+        },
+        None => true,
     }
 }
 
@@ -126,16 +207,18 @@ fn validate_licenses(
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct VerifiedNodeState {
-    pub pubkey: String,
-    pub bls_key: String,
-    pub proxies: HashMap<usize, String>,
-    pub signatures: Vec<LicenceSignature>,
-    pub licenses: HashMap<String, i32>,
-    pub version: String,
+pub struct VerifiedNodeStateNoLicenses {
+    pubkey: String,
+    bls_key: String,
+    signatures: Vec<LicenceSignature>,
+    version: String,
 }
 
-impl VerifiedNodeState {
+impl VerifiedNodeStateNoLicenses {
+    pub fn get_signatures(&self) -> Vec<LicenceSignature> {
+        self.signatures.clone()
+    }
+
     fn from_gossip(section: HashMap<String, String>) -> anyhow::Result<Self> {
         let pubkey = section
             .get(&ZerostateKeys::Pubkey.to_string())
@@ -147,39 +230,88 @@ impl VerifiedNodeState {
             .ok_or_else(|| anyhow!("Missing required field: bls_pubkey"))?
             .to_string();
 
-        let proxies_vec: Vec<ProxyConfig> = serde_json::from_str(
+        let signatures: Vec<LicenceSignature> = serde_json::from_str(
             section
-                .get(&ZerostateKeys::Proxies.to_string())
-                .ok_or_else(|| anyhow!("Missing required field: proxies"))?,
+                .get(&ZerostateKeys::Signatures.to_string())
+                .ok_or_else(|| anyhow!("Missing required field: signatures"))?,
         )?;
 
-        let mut proxies: HashMap<usize, String> = HashMap::new();
-        for (k, v) in proxies_vec.iter().enumerate() {
-            let value = format!("{} {}", v.url, v.cert);
-            proxies.insert(k, value);
-        }
-
-        let signatures_as_string = section
-            .get(&ZerostateKeys::Signatures.to_string())
-            .ok_or_else(|| anyhow!("Missing required field: signatures"))?;
-
-        let signatures: Vec<LicenceSignature> = serde_json::from_str(signatures_as_string)?;
-
-        LicenceSignature::check_all_signatures_in_section(
-            &signatures,
-            &BACKEND_VERIFYING_KEY,
-            &pubkey,
-            &bls_key,
-        )?;
-
-        let licenses = LicenceSignature::derive_licences(&signatures);
+        let verified_signatures =
+            VerifiedSignatures::create(&signatures, &BACKEND_VERIFYING_KEY, &pubkey, &bls_key)?;
 
         let version = section
             .get(&ZerostateKeys::Version.to_string())
             .ok_or_else(|| anyhow!("Missing required field: version"))?
             .to_string();
+        Ok(VerifiedNodeStateNoLicenses {
+            pubkey,
+            bls_key,
+            signatures: verified_signatures.get().clone(),
+            version,
+        })
+    }
+}
 
-        Ok(VerifiedNodeState { pubkey, bls_key, proxies, signatures, licenses, version })
+impl ContainsVec<LicenceSignature> for VerifiedNodeStateNoLicenses {
+    fn get_mut_vec(&mut self) -> &mut Vec<LicenceSignature> {
+        &mut self.signatures
+    }
+
+    fn is_empty(&self) -> bool {
+        self.signatures.is_empty()
+    }
+
+    fn get_pk(&self) -> String {
+        self.pubkey.clone()
+    }
+}
+pub struct Licences {
+    inner: HashMap<String, i32>,
+}
+impl Licences {
+    // Generate `licenses` from `signatures`
+    pub fn derive_licences(signatures: &VerifiedSignatures) -> Licences {
+        let hm = signatures.get().iter().fold(HashMap::new(), |mut acc, sig| {
+            *acc.entry(sig.license_owner_pubkey.to_string()).or_insert(0) += 1;
+            acc
+        });
+        Licences { inner: hm }
+    }
+
+    pub fn get(&self) -> HashMap<String, i32> {
+        self.inner.clone()
+    }
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct VerifiedNodeState {
+    pubkey: String,
+    bls_key: String,
+    signatures: Vec<LicenceSignature>,
+    licenses: HashMap<String, i32>,
+    version: String,
+}
+
+impl VerifiedNodeState {
+    pub fn from_state(state: Vec<VerifiedNodeStateNoLicenses>) -> (Vec<Self>, Vec<RevokedLicense>) {
+        let (_, problem) = remove_with_outdated_timestamps(state.clone());
+
+        let mut verified_state = vec![];
+
+        for node_state in state.iter() {
+            let checked_signatures = VerifiedSignatures::from_checked_state(node_state);
+            let licenses = Licences::derive_licences(&checked_signatures);
+
+            verified_state.push(Self {
+                pubkey: node_state.pubkey.clone(),
+                bls_key: node_state.bls_key.clone(),
+                signatures: node_state.signatures.clone(),
+                version: node_state.version.clone(),
+                licenses: licenses.inner,
+            });
+        }
+
+        (verified_state, problem)
     }
 }
 
@@ -233,5 +365,61 @@ mod tests {
 
         let result = validate_licenses(&gossip_data, &verified_licenses);
         assert_eq!(result, Err("\"licenses\" and \"signatures\" properties do not match"));
+    }
+
+    #[test]
+    fn check_proxy() {
+        let proxies = serde_json::to_string(&serde_json::json!([
+            {"socket_address": "127.0.0.1:8080"}]))
+        .unwrap();
+
+        assert!(check_proxy_socket_addresses(Some(&proxies)));
+    }
+    #[test]
+    fn check_many_proxies() {
+        let proxies = serde_json::to_string(&serde_json::json!([
+            {"socket_address": "127.0.0.1:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.3:8080", "cert": "my_cert_2" }
+        ]))
+        .unwrap();
+        assert!(check_proxy_socket_addresses(Some(&proxies)));
+    }
+
+    #[test]
+    fn check_proxies_address_fail() {
+        let proxies = serde_json::to_string(&serde_json::json!([
+            {"socket_address": "a.b.0.1:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.3:8080", "cert": "my_cert_2" }
+        ]))
+        .unwrap();
+        assert!(!check_proxy_socket_addresses(Some(&proxies)));
+    }
+    #[test]
+    fn check_proxies_fail() {
+        let proxies = serde_json::to_string(&serde_json::json!([
+            {"socket_address": "127.0.0.1:8080", "cert": "my_cert_1" },
+            {"cert": "my_cert_2" }
+        ]))
+        .unwrap();
+        assert!(!check_proxy_socket_addresses(Some(&proxies)));
+    }
+
+    #[test]
+    fn check_to_many_proxies_fail() {
+        let proxies = serde_json::to_string(&serde_json::json!([
+            {"socket_address": "127.0.0.1:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.2:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.3:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.4:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.5:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.6:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.7:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.8:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.9:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.10:8080", "cert": "my_cert_1" },
+            {"socket_address": "127.0.0.11:8080", "cert": "my_cert_1" },
+        ]))
+        .unwrap();
+        assert!(!check_proxy_socket_addresses(Some(&proxies)));
     }
 }

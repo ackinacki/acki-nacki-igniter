@@ -81,7 +81,7 @@ async fn tokio_main_inner() -> anyhow::Result<()> {
 
     tracing::info!("Gossip advertise addr: {:?}", advertise_addr);
 
-    let (gossip_handle, gossip_rest_handle) = acki_nacki_igniter::gossip::run(
+    let (chitchat, gossip_handle, gossip_rest_handle) = acki_nacki_igniter::gossip::run(
         listen_addr,
         api_addr,
         chitchat::transport::UdpTransport,
@@ -91,6 +91,9 @@ async fn tokio_main_inner() -> anyhow::Result<()> {
         initial_key_values,
     )
     .await?;
+
+    let revoked_licenses_watcher =
+        acki_nacki_igniter::revoked_license_watcher::run(chitchat, params.keys.wallet.pubkey).await;
 
     tokio::select! {
         v = updater_handle => {
@@ -102,6 +105,9 @@ async fn tokio_main_inner() -> anyhow::Result<()> {
         }
         v = gossip_rest_handle => {
             anyhow::bail!("API server failed: {v:?}");
+        }
+         v = revoked_licenses_watcher => {
+            anyhow::bail!("License watcher failed: {v:?}");
         }
     }
 }

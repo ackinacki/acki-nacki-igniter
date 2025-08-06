@@ -136,8 +136,10 @@ pub struct BlsConfig {
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct ProxyConfig {
-    pub url: String,
-    pub cert: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub socket_address: Option<SocketAddr>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub cert: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -149,6 +151,15 @@ pub struct LicenceSignature {
     pub delegation_confirm_sig: String,
     pub timestamp: u64,
     pub license_proof_sig: String,
+}
+impl HasTimestampAndId for LicenceSignature {
+    fn get_id(&self) -> String {
+        self.license_id.clone()
+    }
+
+    fn get_timestamp(&self) -> u64 {
+        self.timestamp
+    }
 }
 
 pub fn read_yaml<T: DeserializeOwned>(config_path: impl AsRef<Path>) -> anyhow::Result<T> {
@@ -178,6 +189,8 @@ fn default_advertise_addr() -> SocketAddr {
 }
 use std::net::SocketAddr;
 
+use crate::utils::HasTimestampAndId;
+
 fn deserialize_addr<'de, D>(deserializer: D) -> Result<SocketAddr, D::Error>
 where
     D: serde::Deserializer<'de>,
@@ -199,13 +212,13 @@ where
 mod tests {
     use super::*;
     #[test]
-    fn test_read_config_failed() {
+    fn read_config_failed() {
         let result = read_yaml::<Config>(Path::new("foo"));
         assert!(result.is_err())
     }
 
     #[test]
-    fn test_read_config_success() {
+    fn read_config_success() {
         let keys =
             read_yaml::<Keys>(Path::new("./tests/keys.yaml")).expect("File exists and valid");
 
@@ -217,5 +230,23 @@ mod tests {
             read_yaml::<Config>(Path::new("./tests/config.yaml")).expect("File exists and valid");
 
         assert_eq!(cfg.signatures[0].license_id, "license_id_0");
+    }
+
+    #[test]
+    fn read_config_no_proxies_success() {
+        let cfg = read_yaml::<Config>(Path::new("./tests/config-no-proxies.yaml"))
+            .expect("File exists and valid");
+        assert_eq!(cfg.signatures[0].license_id, "license_id_0");
+    }
+    #[test]
+    fn read_config_invalid_proxies_failed() {
+        match read_yaml::<Config>(Path::new("./tests/config-invalid-proxies.yaml")) {
+            Ok(cfg) => {
+                panic!("Expected error, but got config: {cfg:?}");
+            }
+            Err(e) => {
+                assert!(e.to_string().contains("invalid socket address"));
+            }
+        }
     }
 }

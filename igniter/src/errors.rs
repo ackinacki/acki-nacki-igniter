@@ -17,6 +17,9 @@ pub enum IgniterError {
     #[error("No licences")]
     NoLicenses,
 
+    #[error("Invalid proxies")]
+    InvalidProxies,
+
     #[error("Too many licences")]
     TooManyLicenses,
 
@@ -24,7 +27,7 @@ pub enum IgniterError {
     DuplicateLicenseId(String),
 
     #[error("Invalid backend public key")]
-    InvalidBackedKey,
+    InvalidBackendKey,
 
     #[error("{0}")]
     Other(#[from] anyhow::Error),

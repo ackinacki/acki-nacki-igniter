@@ -260,7 +260,6 @@ impl Server {
                     }
                 },
                 _ = gossip_interval.tick() => {
-                    info!("gossip");
                     self.gossip_multiple().await
                 },
                 command = self.command_rx.recv() => match command {

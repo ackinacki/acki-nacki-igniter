@@ -9,6 +9,7 @@ use chitchat::spawn_chitchat;
 use chitchat::ChitchatConfig;
 use chitchat::ChitchatHandle;
 use chitchat::ChitchatId;
+use chitchat::ChitchatRef;
 use chitchat::ClusterStateSnapshot;
 use chitchat::FailureDetectorConfig;
 use cool_id_generator::Size;
@@ -50,7 +51,7 @@ pub async fn run(
     seeds: Vec<String>,
     cluster_id: String,
     initial_key_values: Vec<(String, String)>,
-) -> anyhow::Result<(ChitchatHandle, JoinHandle<anyhow::Result<()>>)> {
+) -> anyhow::Result<(ChitchatRef, ChitchatHandle, JoinHandle<anyhow::Result<()>>)> {
     let node_id = generate_server_id(gossip_advertise_addr);
     let generation = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap().as_secs();
     let chitchat_id = ChitchatId::new(node_id, generation, gossip_advertise_addr);
@@ -88,5 +89,5 @@ pub async fn run(
         Server::new(TcpListener::bind(api_addr)).run(app).await.map_err(|err| err.into())
     });
 
-    Ok((chitchat_handle, rest_server_handle))
+    Ok((chitchat, chitchat_handle, rest_server_handle))
 }

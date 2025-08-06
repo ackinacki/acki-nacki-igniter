@@ -117,7 +117,7 @@ mod unit_tests {
             let message = connection.accept_recv().await.unwrap().recv().await.unwrap();
             assert_eq!(client_cred_clone.identity(), connection.remote_identity());
             assert_eq!(message.len(), 5);
-            println!("{:?}", message);
+            println!("{message:?}");
         });
 
         let server_cred_clone = server_cred.clone();
@@ -194,7 +194,7 @@ mod unit_tests {
         let mut buf = [0u8; 5];
         let len = stream.read_exact(&mut buf).await.unwrap();
         let received_str = String::from_utf8_lossy(&buf[0..len]);
-        println!("Received: {}", received_str);
+        println!("Received: {received_str}");
         assert_eq!(received_str, "hello");
     }
 
