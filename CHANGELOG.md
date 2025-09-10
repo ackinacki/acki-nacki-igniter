@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+
+## [0.4.1] - 2025-09-10
+
+### New
+- Ability to set cluster name in config
+
 ## [0.4.0] - 2025-08-06
 ### New
 - Number of licenses per Igniter instance increased to 20. 

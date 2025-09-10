@@ -12,6 +12,7 @@
   - [About Automatic Update](#about-automatic-update)
   - [Run Igniter with auto-update](#run-igniter-with-auto-update)
   - [Run Igniter without auto-update](#run-igniter-without-auto-update)
+  - [Check the Current State of the Igniter Instance](#check-the-current-state-of-the-igniter-instance)
 
 ## Overview
 
@@ -45,7 +46,7 @@ Seed phrase: "city young own hawk print edit service spot always limit secret su
 Keypair successfully saved to node_provider_keys.json.
 ```
 
-**Important**:  
+⚠️ **Important**:  
 **Store the seed phrase and secret key in a safe place. Do not share them with anyone.**
 
 ## Get Delegation Signatures
@@ -78,7 +79,7 @@ Create a [`config.yaml`](./config-template.yaml) file based on the provided temp
 
 If you plan to run multiple Block Keeper (BK) nodes on a single server, you must also run the same number of Igniter instances on that server. Each Igniter instance must use the same public IP address as its corresponding BK node.
 
-**Important:**  
+⚠️ **Important:**  
 Each Igniter instance requires its own dedicated configuration file.
 
 To run multiple Igniter instances on a single host, you need to create separate configuration files (e.g., `config_1.yaml`, `config_2.yaml`, etc.) with unique values for the `ADVERTISE_PORT` and `API_PORT` parameters in each file. You can assign any available (non-conflicting) ports.
@@ -88,15 +89,15 @@ To run multiple Igniter instances on a single host, you need to create separate 
 Igniter supports automatic update of its container when a new version is released.  
 This feature is enabled with `auto_update` parameter in the [`config.yaml`](./config-template.yaml#L16) configuration file.
 
-- **Important:**  
+⚠️ **Important:**  
 **For auto-update to work, Igniter must be launched using the `latest` tag.**
 
-- **Important:**  
+⚠️ **Important:**  
 **For auto-update to work, host's docker socket should be mounted inside the container**
 
 ## Run Igniter with auto-update
 
-**Important:**  
+⚠️**Important:**  
 **Igniter must be launched on each node that you want to include in the Zerostate.**
 
 Igniter must be run using a Docker image with the `latest` tag and the hosts's Docker socket mounted inside the container:
@@ -122,12 +123,11 @@ docker run  \
         acki-nacki-igniter --keys /keys.yaml --config /config.yaml
 ```
 
-By default, the Gossip state is accessible at:  
-http://your_public_ip_address:10001
+After running, [verify that the Igniter instance has joined the cluster](#check-current-state-of-the-igniter-instance).
 
 ## Run Igniter without auto-update
 
-**Important:**  
+⚠️**Important:**  
 **Igniter must be launched on each node that you want to include in the Zerostate.**
 
 Update config.yaml file: set `auto_update` to `false`.
@@ -154,6 +154,19 @@ docker run  \
         acki-nacki-igniter --keys /keys.yaml --config /config.yaml
 ```
 
+After running, [verify that the Igniter instance has joined the cluster](#check-current-state-of-the-igniter-instance).
 
-By default, the Gossip state is accessible at:  
+## Check the Current State of the Igniter Instance
+
+By default, the Gossip state is accessible at:
 http://your_public_ip_address:10001
+
+In the `cluster_state.node_states` section, locate the entry where the key `gossip_advertise_addr` matches the public IP address of your future BK node.
+
+It should look approximately like this: ![this:](./docs/gossip.jpg)
+
+At this point, **verify that all the listed values match the configuration you defined for Igniter**.
+
+⚠️ **Important**  
+To ensure proper synchronization, **make sure that some [gossip seed nodes](https://github.com/ackinacki/acki-nacki-igniter-seeds/blob/main/seeds.yaml) are also included in the cluster**.  
+Otherwise, your nodes may form a separate cluster and only see each other.

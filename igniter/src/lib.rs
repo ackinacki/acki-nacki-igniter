@@ -382,6 +382,7 @@ mod tests {
     fn default_config_and_keys() -> (Config, Keys) {
         (
             Config {
+                cluster_id: "test_cluster".to_string(),
                 proxies: vec![],
                 listen_addr: "127.0.0.1:10000".parse().expect("Invalid SocketAddr format"),
                 api_addr: "127.0.0.1:10000".parse().expect("Invalid SocketAddr format"),

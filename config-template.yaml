@@ -27,6 +27,7 @@ signatures:
 auto_update: true
 
 # DO NOT MODIFY the following parameters
+cluster_id: "acki-nacki-igniter"
 listen_addr: "0.0.0.0:10000" # Address to accept P2P connections
 api_addr: "0.0.0.0:10001" # Local API server address
 interval: 1000 # Heartbeat interval in milliseconds
