@@ -396,7 +396,7 @@ pub struct KeyChangeEvent<'a> {
 }
 
 impl KeyChangeEvent<'_> {
-    fn strip_key_prefix(&self, prefix: &str) -> Option<KeyChangeEvent> {
+    fn strip_key_prefix(&self, prefix: &str) -> Option<KeyChangeEvent<'_>> {
         let key_without_prefix = self.key.strip_prefix(prefix)?;
         Some(KeyChangeEvent { key: key_without_prefix, value: self.value, node: self.node })
     }

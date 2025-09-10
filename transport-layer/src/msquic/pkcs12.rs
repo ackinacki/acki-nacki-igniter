@@ -139,7 +139,7 @@ impl Pkcs12PbeParams {
         })
     }
 }
-
+#[allow(dead_code)]
 #[derive(Debug, Clone, PartialEq)]
 pub struct OtherAlgorithmIdentifier {
     pub algorithm_type: ObjectIdentifier,

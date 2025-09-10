@@ -178,5 +178,5 @@ fn insert_ids(ids: &mut HashMap<usize, usize>, new_ids: &[&ChitchatId]) {
 }
 
 fn print_ids(prefix: &str, ids: &HashMap<usize, usize>) {
-    println!("{prefix}: {}, {}", ids.len(), ids.iter().map(|(_, c)| format!("{c}")).join(","));
+    println!("{prefix}: {}, {}", ids.len(), ids.values().map(|c| format!("{c}")).join(","));
 }

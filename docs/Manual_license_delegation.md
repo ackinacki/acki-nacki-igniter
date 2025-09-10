@@ -26,9 +26,9 @@ To obtain the `delegation_sig`, concatenate the following values into a single l
 * For `provider_pubkey`, use the public key of the company or individual to whom you are delegating the license.
 If you're delegating the license it to yourself, must still generate your own [`Node Provider Key Pair`](https://github.com/ackinacki/acki-nacki-igniter/blob/main/README.md/#generate-a-node-provider-key-pair) for security purposes and use its public key.
 
-* You can view the `license_id` of each license in the Dashboard under the **Licenses** tab:
+* You can view the `license_id` of each license in the Dashboard under the **Licenses** tab: 
 
-[licence ID](https://github.com/ackinacki/acki-nacki-igniter/blob/main/docs/licence ID.jpg)
+    ![license](./license_ID.jpg)
 
 * Retrieve the current `timestamp` in seconds and save it for later use.
 

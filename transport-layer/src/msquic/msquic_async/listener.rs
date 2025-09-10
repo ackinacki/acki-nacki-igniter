@@ -61,7 +61,7 @@ impl Listener {
     }
 
     /// Accept a new connection.
-    pub fn accept(&self) -> Accept {
+    pub fn accept(&self) -> Accept<'_> {
         Accept(self)
     }
 
@@ -88,7 +88,7 @@ impl Listener {
     }
 
     /// Stop the listener.
-    pub fn stop(&self) -> Stop {
+    pub fn stop(&self) -> Stop<'_> {
         Stop(self)
     }
 

@@ -126,7 +126,7 @@ impl Connection {
     }
 
     /// Wait for receiving remote certificate
-    pub fn receive_remote_certificate(&self) -> RemoteCertificateReceiver {
+    pub fn receive_remote_certificate(&self) -> RemoteCertificateReceiver<'_> {
         RemoteCertificateReceiver { conn: self }
     }
 

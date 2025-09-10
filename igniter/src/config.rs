@@ -62,6 +62,10 @@ macro_rules! hide_secrets_fmt {
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Config {
+    // Chitchat cluster id for gossip
+    #[serde(default = "default_cluster_id")]
+    pub cluster_id: String,
+
     #[serde(default)]
     pub proxies: Vec<ProxyConfig>,
 
@@ -175,6 +179,10 @@ pub fn read_yaml<T: DeserializeOwned>(config_path: impl AsRef<Path>) -> anyhow::
 
 fn default_interval() -> u64 {
     500
+}
+
+fn default_cluster_id() -> String {
+    env!("CARGO_PKG_NAME").to_string()
 }
 
 fn default_listen_addr() -> SocketAddr {

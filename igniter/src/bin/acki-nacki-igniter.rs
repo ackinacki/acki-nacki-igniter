@@ -77,7 +77,7 @@ async fn tokio_main_inner() -> anyhow::Result<()> {
     let api_addr = CLI.config.api_addr;
     let seeds = CLI.config.seeds.clone();
     let advertise_addr = CLI.config.advertise_addr;
-    let name = env!("CARGO_PKG_NAME");
+    let cluster_id = CLI.config.cluster_id.clone();
 
     tracing::info!("Gossip advertise addr: {:?}", advertise_addr);
 
@@ -87,7 +87,7 @@ async fn tokio_main_inner() -> anyhow::Result<()> {
         chitchat::transport::UdpTransport,
         advertise_addr,
         seeds,
-        name.to_string(),
+        cluster_id,
         initial_key_values,
     )
     .await?;
